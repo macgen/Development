@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACD937DE18702D560018E0DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD937DD18702D560018E0DA /* Foundation.framework */; };
+		ACD937E018702D560018E0DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD937DF18702D560018E0DA /* CoreGraphics.framework */; };
+		ACD937E218702D560018E0DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD937E118702D560018E0DA /* UIKit.framework */; };
+		ACD937E818702D560018E0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACD937E618702D560018E0DA /* InfoPlist.strings */; };
+		ACD937EA18702D560018E0DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD937E918702D560018E0DA /* main.m */; };
+		ACD937EE18702D560018E0DA /* CamplightAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD937ED18702D560018E0DA /* CamplightAppDelegate.m */; };
+		ACD937F118702D560018E0DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD937EF18702D560018E0DA /* Main.storyboard */; };
+		ACD937F418702D560018E0DA /* CamplightFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD937F318702D560018E0DA /* CamplightFirstViewController.m */; };
+		ACD937F718702D560018E0DA /* CamplightSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD937F618702D560018E0DA /* CamplightSecondViewController.m */; };
+		ACD937F918702D560018E0DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD937F818702D560018E0DA /* Images.xcassets */; };
+		ACD9380018702D560018E0DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD937FF18702D560018E0DA /* XCTest.framework */; };
+		ACD9380118702D560018E0DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD937DD18702D560018E0DA /* Foundation.framework */; };
+		ACD9380218702D560018E0DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD937E118702D560018E0DA /* UIKit.framework */; };
+		ACD9380A18702D560018E0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACD9380818702D560018E0DA /* InfoPlist.strings */; };
+		ACD9380C18702D560018E0DA /* camplightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD9380B18702D560018E0DA /* camplightTests.m */; };
+		ACD938671870F06A0018E0DA /* CamplightThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD938661870F06A0018E0DA /* CamplightThirdViewController.m */; };
+		ACD9386A18710FEF0018E0DA /* course.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACD9386818710FEF0018E0DA /* course.txt */; };
+		ACD9386B18710FEF0018E0DA /* bio.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACD9386918710FEF0018E0DA /* bio.txt */; };
+		ACD9387218711A560018E0DA /* camplight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD9386C18711A560018E0DA /* camplight@2x.png */; };
+		ACD9387318711A560018E0DA /* camplight.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD9386D18711A560018E0DA /* camplight.png */; };
+		ACD9387418711A560018E0DA /* readinglight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD9386E18711A560018E0DA /* readinglight@2x.png */; };
+		ACD9387518711A560018E0DA /* readinglight.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD9386F18711A560018E0DA /* readinglight.png */; };
+		ACD9387618711A560018E0DA /* nightlight.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD9387018711A560018E0DA /* nightlight.png */; };
+		ACD9387718711A560018E0DA /* nightlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD9387118711A560018E0DA /* nightlight@2x.png */; };
+		ACD9387918711F7D0018E0DA /* iphone_user_guide.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ACD9387818711F7D0018E0DA /* iphone_user_guide.pdf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACD9380318702D560018E0DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACD937D218702D560018E0DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACD937D918702D560018E0DA;
+			remoteInfo = camplight;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACD937DA18702D560018E0DA /* camplight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camplight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD937DD18702D560018E0DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ACD937DF18702D560018E0DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ACD937E118702D560018E0DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ACD937E518702D560018E0DA /* camplight-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "camplight-Info.plist"; sourceTree = "<group>"; };
+		ACD937E718702D560018E0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ACD937E918702D560018E0DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ACD937EB18702D560018E0DA /* camplight-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "camplight-Prefix.pch"; sourceTree = "<group>"; };
+		ACD937EC18702D560018E0DA /* CamplightAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CamplightAppDelegate.h; sourceTree = "<group>"; };
+		ACD937ED18702D560018E0DA /* CamplightAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CamplightAppDelegate.m; sourceTree = "<group>"; };
+		ACD937F018702D560018E0DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACD937F218702D560018E0DA /* CamplightFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CamplightFirstViewController.h; sourceTree = "<group>"; };
+		ACD937F318702D560018E0DA /* CamplightFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CamplightFirstViewController.m; sourceTree = "<group>"; };
+		ACD937F518702D560018E0DA /* CamplightSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CamplightSecondViewController.h; sourceTree = "<group>"; };
+		ACD937F618702D560018E0DA /* CamplightSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CamplightSecondViewController.m; sourceTree = "<group>"; };
+		ACD937F818702D560018E0DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ACD937FE18702D560018E0DA /* camplightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = camplightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD937FF18702D560018E0DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		ACD9380718702D560018E0DA /* camplightTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "camplightTests-Info.plist"; sourceTree = "<group>"; };
+		ACD9380918702D560018E0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ACD9380B18702D560018E0DA /* camplightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = camplightTests.m; sourceTree = "<group>"; };
+		ACD938651870F06A0018E0DA /* CamplightThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamplightThirdViewController.h; sourceTree = "<group>"; };
+		ACD938661870F06A0018E0DA /* CamplightThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamplightThirdViewController.m; sourceTree = "<group>"; };
+		ACD9386818710FEF0018E0DA /* course.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = course.txt; sourceTree = "<group>"; };
+		ACD9386918710FEF0018E0DA /* bio.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bio.txt; sourceTree = "<group>"; };
+		ACD9386C18711A560018E0DA /* camplight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camplight@2x.png"; sourceTree = "<group>"; };
+		ACD9386D18711A560018E0DA /* camplight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camplight.png; sourceTree = "<group>"; };
+		ACD9386E18711A560018E0DA /* readinglight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "readinglight@2x.png"; sourceTree = "<group>"; };
+		ACD9386F18711A560018E0DA /* readinglight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = readinglight.png; sourceTree = "<group>"; };
+		ACD9387018711A560018E0DA /* nightlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightlight.png; sourceTree = "<group>"; };
+		ACD9387118711A560018E0DA /* nightlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nightlight@2x.png"; sourceTree = "<group>"; };
+		ACD9387818711F7D0018E0DA /* iphone_user_guide.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = iphone_user_guide.pdf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACD937D718702D560018E0DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD937E018702D560018E0DA /* CoreGraphics.framework in Frameworks */,
+				ACD937E218702D560018E0DA /* UIKit.framework in Frameworks */,
+				ACD937DE18702D560018E0DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD937FB18702D560018E0DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD9380018702D560018E0DA /* XCTest.framework in Frameworks */,
+				ACD9380218702D560018E0DA /* UIKit.framework in Frameworks */,
+				ACD9380118702D560018E0DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACD937D118702D560018E0DA = {
+			isa = PBXGroup;
+			children = (
+				ACD937E318702D560018E0DA /* camplight */,
+				ACD9380518702D560018E0DA /* camplightTests */,
+				ACD937DC18702D560018E0DA /* Frameworks */,
+				ACD937DB18702D560018E0DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACD937DB18702D560018E0DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACD937DA18702D560018E0DA /* camplight.app */,
+				ACD937FE18702D560018E0DA /* camplightTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACD937DC18702D560018E0DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACD937DD18702D560018E0DA /* Foundation.framework */,
+				ACD937DF18702D560018E0DA /* CoreGraphics.framework */,
+				ACD937E118702D560018E0DA /* UIKit.framework */,
+				ACD937FF18702D560018E0DA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACD937E318702D560018E0DA /* camplight */ = {
+			isa = PBXGroup;
+			children = (
+				ACD937EC18702D560018E0DA /* CamplightAppDelegate.h */,
+				ACD937ED18702D560018E0DA /* CamplightAppDelegate.m */,
+				ACD937EF18702D560018E0DA /* Main.storyboard */,
+				ACD937F218702D560018E0DA /* CamplightFirstViewController.h */,
+				ACD937F318702D560018E0DA /* CamplightFirstViewController.m */,
+				ACD937F518702D560018E0DA /* CamplightSecondViewController.h */,
+				ACD937F618702D560018E0DA /* CamplightSecondViewController.m */,
+				ACD938651870F06A0018E0DA /* CamplightThirdViewController.h */,
+				ACD938661870F06A0018E0DA /* CamplightThirdViewController.m */,
+				ACD937F818702D560018E0DA /* Images.xcassets */,
+				ACD937E418702D560018E0DA /* Supporting Files */,
+			);
+			path = camplight;
+			sourceTree = "<group>";
+		};
+		ACD937E418702D560018E0DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACD9387818711F7D0018E0DA /* iphone_user_guide.pdf */,
+				ACD9386C18711A560018E0DA /* camplight@2x.png */,
+				ACD9386D18711A560018E0DA /* camplight.png */,
+				ACD9386E18711A560018E0DA /* readinglight@2x.png */,
+				ACD9386F18711A560018E0DA /* readinglight.png */,
+				ACD9387018711A560018E0DA /* nightlight.png */,
+				ACD9387118711A560018E0DA /* nightlight@2x.png */,
+				ACD9386818710FEF0018E0DA /* course.txt */,
+				ACD9386918710FEF0018E0DA /* bio.txt */,
+				ACD937E518702D560018E0DA /* camplight-Info.plist */,
+				ACD937E618702D560018E0DA /* InfoPlist.strings */,
+				ACD937E918702D560018E0DA /* main.m */,
+				ACD937EB18702D560018E0DA /* camplight-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACD9380518702D560018E0DA /* camplightTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACD9380B18702D560018E0DA /* camplightTests.m */,
+				ACD9380618702D560018E0DA /* Supporting Files */,
+			);
+			path = camplightTests;
+			sourceTree = "<group>";
+		};
+		ACD9380618702D560018E0DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACD9380718702D560018E0DA /* camplightTests-Info.plist */,
+				ACD9380818702D560018E0DA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACD937D918702D560018E0DA /* camplight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACD9380F18702D560018E0DA /* Build configuration list for PBXNativeTarget "camplight" */;
+			buildPhases = (
+				ACD937D618702D560018E0DA /* Sources */,
+				ACD937D718702D560018E0DA /* Frameworks */,
+				ACD937D818702D560018E0DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = camplight;
+			productName = camplight;
+			productReference = ACD937DA18702D560018E0DA /* camplight.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACD937FD18702D560018E0DA /* camplightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACD9381218702D560018E0DA /* Build configuration list for PBXNativeTarget "camplightTests" */;
+			buildPhases = (
+				ACD937FA18702D560018E0DA /* Sources */,
+				ACD937FB18702D560018E0DA /* Frameworks */,
+				ACD937FC18702D560018E0DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACD9380418702D560018E0DA /* PBXTargetDependency */,
+			);
+			name = camplightTests;
+			productName = camplightTests;
+			productReference = ACD937FE18702D560018E0DA /* camplightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACD937D218702D560018E0DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Camplight;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "BESS HO";
+				TargetAttributes = {
+					ACD937FD18702D560018E0DA = {
+						TestTargetID = ACD937D918702D560018E0DA;
+					};
+				};
+			};
+			buildConfigurationList = ACD937D518702D560018E0DA /* Build configuration list for PBXProject "camplight" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACD937D118702D560018E0DA;
+			productRefGroup = ACD937DB18702D560018E0DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACD937D918702D560018E0DA /* camplight */,
+				ACD937FD18702D560018E0DA /* camplightTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACD937D818702D560018E0DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD9387218711A560018E0DA /* camplight@2x.png in Resources */,
+				ACD937F918702D560018E0DA /* Images.xcassets in Resources */,
+				ACD9387418711A560018E0DA /* readinglight@2x.png in Resources */,
+				ACD9386A18710FEF0018E0DA /* course.txt in Resources */,
+				ACD9387718711A560018E0DA /* nightlight@2x.png in Resources */,
+				ACD9387518711A560018E0DA /* readinglight.png in Resources */,
+				ACD9387618711A560018E0DA /* nightlight.png in Resources */,
+				ACD937E818702D560018E0DA /* InfoPlist.strings in Resources */,
+				ACD937F118702D560018E0DA /* Main.storyboard in Resources */,
+				ACD9387318711A560018E0DA /* camplight.png in Resources */,
+				ACD9386B18710FEF0018E0DA /* bio.txt in Resources */,
+				ACD9387918711F7D0018E0DA /* iphone_user_guide.pdf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD937FC18702D560018E0DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD9380A18702D560018E0DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACD937D618702D560018E0DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD937EE18702D560018E0DA /* CamplightAppDelegate.m in Sources */,
+				ACD937EA18702D560018E0DA /* main.m in Sources */,
+				ACD937F718702D560018E0DA /* CamplightSecondViewController.m in Sources */,
+				ACD937F418702D560018E0DA /* CamplightFirstViewController.m in Sources */,
+				ACD938671870F06A0018E0DA /* CamplightThirdViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD937FA18702D560018E0DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD9380C18702D560018E0DA /* camplightTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACD9380418702D560018E0DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACD937D918702D560018E0DA /* camplight */;
+			targetProxy = ACD9380318702D560018E0DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ACD937E618702D560018E0DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACD937E718702D560018E0DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ACD937EF18702D560018E0DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACD937F018702D560018E0DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ACD9380818702D560018E0DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACD9380918702D560018E0DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACD9380D18702D560018E0DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ACD9380E18702D560018E0DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACD9381018702D560018E0DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "camplight/camplight-Prefix.pch";
+				INFOPLIST_FILE = "camplight/camplight-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ACD9381118702D560018E0DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "camplight/camplight-Prefix.pch";
+				INFOPLIST_FILE = "camplight/camplight-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		ACD9381318702D560018E0DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/camplight.app/camplight";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "camplight/camplight-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "camplightTests/camplightTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		ACD9381418702D560018E0DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/camplight.app/camplight";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "camplight/camplight-Prefix.pch";
+				INFOPLIST_FILE = "camplightTests/camplightTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACD937D518702D560018E0DA /* Build configuration list for PBXProject "camplight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD9380D18702D560018E0DA /* Debug */,
+				ACD9380E18702D560018E0DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACD9380F18702D560018E0DA /* Build configuration list for PBXNativeTarget "camplight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD9381018702D560018E0DA /* Debug */,
+				ACD9381118702D560018E0DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACD9381218702D560018E0DA /* Build configuration list for PBXNativeTarget "camplightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD9381318702D560018E0DA /* Debug */,
+				ACD9381418702D560018E0DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACD937D218702D560018E0DA /* Project object */;
+}

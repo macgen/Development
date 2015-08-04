@@ -1,0 +1,11 @@
+University of California Santa Cruz Extension
+21938 Developing Applications for iPhone, iPad & iPod Touch, Introduction
+
+Instructor: Bess Ho
+
+Course Description:
+The iPhone, iPad, and iPod Touch have revolutionized the mobile device world. All three devices run iOS, Apple's operating system for mobile devices. This six-week introductory course equips students with the skills needed to create applications that take advantage of the platform's potential. 
+
+The course provides an overview of using the iOS SDK to develop iPhone, iPad, and iPod Touch applications. It includes discussion of Xcode, Cocoa Touch Frameworks, and Objective-C. Students learn how to develop iOS user interfaces, handle various iOS programming frameworks, and understand memory management and program design. The App Store submission process and guidelines are discussed. The course also reviews special considerations for the iPad and iPod Touch.
+
+By the end of the course, students will have a solid understanding of Xcode and iOS SDK and have the necessary skills to develop applications. The course does not cover all device features and only offers short programming projects. 

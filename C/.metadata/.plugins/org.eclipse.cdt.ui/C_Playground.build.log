@@ -1,0 +1,15 @@
+19:59:07 **** Build of configuration Debug for project C_Playground ****
+make all 
+Building file: ../src/C_Playground.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/C_Playground.d" -MT"src/C_Playground.d" -o "src/C_Playground.o" "../src/C_Playground.cpp"
+Finished building: ../src/C_Playground.cpp
+ 
+Building target: C_Playground
+Invoking: Cross G++ Linker
+g++  -o "C_Playground"  ./src/C_Playground.o   
+Finished building target: C_Playground
+ 
+
+19:59:08 Build Finished (took 266ms)
+

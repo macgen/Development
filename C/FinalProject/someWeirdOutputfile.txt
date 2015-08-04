@@ -1,0 +1,28 @@
+Letter grade for 26 students given in someFileName.txt
+
+ Action Jackson:  A
+    Anne Latner:  B
+Ariana B. Smith:  A
+            BBD:  F
+    Barry Bonds:  A
+     Bill Gates:  F
+    Bobby Brown:  D
+      Brad Pill:  A
+   Buster Posey:  B
+ Emily Gonzales:  B
+ Escobar Morris:  C
+    Hello There:  B
+   Hunter Pence:  B
+     Jennifer L:  B
+      Joe Panik:  C
+     Joe Panikk:  A
+    Maria Jones:  D
+Michael Jackson:  A
+Michael Jackson:  B
+ Michael Jordan:  F
+   New Edistion:  C
+      Test Case:  A
+       Thui Bhu:  A
+ Tony Hernandez:  B
+      Tony Romo:  B
+Touchdown Jones:  D

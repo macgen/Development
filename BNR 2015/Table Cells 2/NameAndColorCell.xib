@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.2" systemVersion="15A245" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellTableIdentifier" id="1Wu-N5-d2Q" customClass="NameAndColorCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Wu-N5-d2Q" id="rLa-f2-QK1">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6J-de-QlL">
+                        <rect key="frame" x="8" y="8" width="54" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" misplaced="YES" text="Color:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk3-OL-2Om">
+                        <rect key="frame" x="8" y="35" width="50" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjN-Ff-0lk">
+                        <rect key="frame" x="80" y="8" width="232" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lne-i8-dck">
+                        <rect key="frame" x="80" y="35" width="232" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="kk3-OL-2Om" firstAttribute="top" secondItem="A6J-de-QlL" secondAttribute="bottom" constant="6" id="038-mJ-3mH"/>
+                    <constraint firstItem="kk3-OL-2Om" firstAttribute="width" secondItem="A6J-de-QlL" secondAttribute="width" id="GX0-3n-8qb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Lne-i8-dck" secondAttribute="trailing" id="JQp-jJ-iKj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="NjN-Ff-0lk" secondAttribute="trailing" id="KdW-Co-AML"/>
+                    <constraint firstItem="Lne-i8-dck" firstAttribute="leading" secondItem="kk3-OL-2Om" secondAttribute="trailing" constant="22" id="NGQ-X7-Ako"/>
+                    <constraint firstAttribute="topMargin" secondItem="A6J-de-QlL" secondAttribute="top" id="R1c-5g-By7"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="A6J-de-QlL" secondAttribute="leading" id="g7c-Rk-N6l"/>
+                    <constraint firstItem="NjN-Ff-0lk" firstAttribute="leading" secondItem="A6J-de-QlL" secondAttribute="trailing" constant="18" id="icB-Ee-UIh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Lne-i8-dck" secondAttribute="bottom" id="rNS-CI-l3X"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="NjN-Ff-0lk" secondAttribute="bottom" constant="27" id="tk8-ex-tUr"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="kk3-OL-2Om" secondAttribute="leading" id="zVZ-rm-FNc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="kk3-OL-2Om" secondAttribute="bottom" constant="9" id="mNt-uY-k3O"/>
+            </constraints>
+            <connections>
+                <outlet property="colorLabel" destination="Lne-i8-dck" id="d2C-vw-DEQ"/>
+                <outlet property="nameLabel" destination="NjN-Ff-0lk" id="WnK-qX-zvH"/>
+            </connections>
+            <point key="canvasLocation" x="616" y="409.5"/>
+        </tableViewCell>
+    </objects>
+</document>

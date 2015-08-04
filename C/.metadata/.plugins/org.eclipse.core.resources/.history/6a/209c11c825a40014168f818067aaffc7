@@ -1,0 +1,18 @@
+/*
+ ============================================================================
+ Name        : FinalProject.c
+ Author      : James J. Kim
+ Version     :
+ Copyright   : No Copy Rights
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+	puts("Hello World"); /* prints Hello World */
+	return EXIT_SUCCESS;
+}
