@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		C6450FBA1B725CC300F9C359 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FB91B725CC300F9C359 /* main.m */; };
 		C6450FBD1B725CC300F9C359 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FBC1B725CC300F9C359 /* AppDelegate.m */; };
-		C6450FC01B725CC300F9C359 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FBF1B725CC300F9C359 /* ViewController.m */; };
 		C6450FC31B725CC300F9C359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6450FC11B725CC300F9C359 /* Main.storyboard */; };
 		C6450FC51B725CC300F9C359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6450FC41B725CC300F9C359 /* Assets.xcassets */; };
 		C6450FC81B725CC300F9C359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6450FC61B725CC300F9C359 /* LaunchScreen.storyboard */; };
 		C6450FD31B725CC300F9C359 /* FontsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FD21B725CC300F9C359 /* FontsTests.m */; };
 		C6450FDE1B725CC300F9C359 /* FontsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FDD1B725CC300F9C359 /* FontsUITests.m */; };
 		C6450FED1B72603A00F9C359 /* FavoritesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FEC1B72603A00F9C359 /* FavoritesList.m */; };
+		C68DD4BE1B73AFF5000153E1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68DD4BD1B73AFF5000153E1 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 		C6450FB91B725CC300F9C359 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C6450FBB1B725CC300F9C359 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C6450FBC1B725CC300F9C359 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C6450FBE1B725CC300F9C359 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C6450FBF1B725CC300F9C359 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C6450FC21B725CC300F9C359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6450FC41B725CC300F9C359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6450FC71B725CC300F9C359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 		C6450FDF1B725CC300F9C359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6450FEB1B72603A00F9C359 /* FavoritesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesList.h; sourceTree = "<group>"; };
 		C6450FEC1B72603A00F9C359 /* FavoritesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesList.m; sourceTree = "<group>"; };
+		C68DD4BC1B73AFF5000153E1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		C68DD4BD1B73AFF5000153E1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +106,10 @@
 			children = (
 				C6450FBB1B725CC300F9C359 /* AppDelegate.h */,
 				C6450FBC1B725CC300F9C359 /* AppDelegate.m */,
-				C6450FBE1B725CC300F9C359 /* ViewController.h */,
-				C6450FBF1B725CC300F9C359 /* ViewController.m */,
 				C6450FEB1B72603A00F9C359 /* FavoritesList.h */,
 				C6450FEC1B72603A00F9C359 /* FavoritesList.m */,
+				C68DD4BC1B73AFF5000153E1 /* RootViewController.h */,
+				C68DD4BD1B73AFF5000153E1 /* RootViewController.m */,
 				C6450FC11B725CC300F9C359 /* Main.storyboard */,
 				C6450FC41B725CC300F9C359 /* Assets.xcassets */,
 				C6450FC61B725CC300F9C359 /* LaunchScreen.storyboard */,
@@ -275,9 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6450FC01B725CC300F9C359 /* ViewController.m in Sources */,
 				C6450FED1B72603A00F9C359 /* FavoritesList.m in Sources */,
 				C6450FBD1B725CC300F9C359 /* AppDelegate.m in Sources */,
+				C68DD4BE1B73AFF5000153E1 /* RootViewController.m in Sources */,
 				C6450FBA1B725CC300F9C359 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +504,7 @@
 				C6450FE41B725CC300F9C359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6450FE51B725CC300F9C359 /* Build configuration list for PBXNativeTarget "FontsTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +513,7 @@
 				C6450FE71B725CC300F9C359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6450FE81B725CC300F9C359 /* Build configuration list for PBXNativeTarget "FontsUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +522,7 @@
 				C6450FEA1B725CC300F9C359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
