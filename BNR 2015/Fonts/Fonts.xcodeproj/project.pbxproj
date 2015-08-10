@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60D6A901B78F3D500D02551 /* FontSizesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D6A8F1B78F3D500D02551 /* FontSizesViewController.m */; };
+		C61CBD421B74FDBB0019E6A5 /* FontListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61CBD411B74FDBB0019E6A5 /* FontListViewController.m */; };
 		C6450FBA1B725CC300F9C359 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FB91B725CC300F9C359 /* main.m */; };
 		C6450FBD1B725CC300F9C359 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FBC1B725CC300F9C359 /* AppDelegate.m */; };
 		C6450FC31B725CC300F9C359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6450FC11B725CC300F9C359 /* Main.storyboard */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C60D6A8E1B78F3D500D02551 /* FontSizesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSizesViewController.h; sourceTree = "<group>"; };
+		C60D6A8F1B78F3D500D02551 /* FontSizesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizesViewController.m; sourceTree = "<group>"; };
+		C61CBD401B74FDBB0019E6A5 /* FontListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontListViewController.h; sourceTree = "<group>"; };
+		C61CBD411B74FDBB0019E6A5 /* FontListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontListViewController.m; sourceTree = "<group>"; };
 		C6450FB51B725CC300F9C359 /* Fonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6450FB91B725CC300F9C359 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C6450FBB1B725CC300F9C359 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 				C6450FEC1B72603A00F9C359 /* FavoritesList.m */,
 				C68DD4BC1B73AFF5000153E1 /* RootViewController.h */,
 				C68DD4BD1B73AFF5000153E1 /* RootViewController.m */,
+				C61CBD401B74FDBB0019E6A5 /* FontListViewController.h */,
+				C61CBD411B74FDBB0019E6A5 /* FontListViewController.m */,
+				C60D6A8E1B78F3D500D02551 /* FontSizesViewController.h */,
+				C60D6A8F1B78F3D500D02551 /* FontSizesViewController.m */,
 				C6450FC11B725CC300F9C359 /* Main.storyboard */,
 				C6450FC41B725CC300F9C359 /* Assets.xcassets */,
 				C6450FC61B725CC300F9C359 /* LaunchScreen.storyboard */,
@@ -275,10 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60D6A901B78F3D500D02551 /* FontSizesViewController.m in Sources */,
 				C6450FED1B72603A00F9C359 /* FavoritesList.m in Sources */,
 				C6450FBD1B725CC300F9C359 /* AppDelegate.m in Sources */,
 				C68DD4BE1B73AFF5000153E1 /* RootViewController.m in Sources */,
 				C6450FBA1B725CC300F9C359 /* main.m in Sources */,
+				C61CBD421B74FDBB0019E6A5 /* FontListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

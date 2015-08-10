@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+#import "FavoritesList.h"
+#import "FontListViewController.h"
 
 @interface RootViewController ()
 
@@ -109,9 +111,35 @@
     }
     
     return cell;
-    
-        
-        
 }
+
+#pragma mark - 
+#pragma mark Navigation
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //Get the new view controller using the [segue destinationViewControlller]...
+    NSIndexPath *indexPath = [self.tableView indexPathForCell: sender];
+    
+    FontListViewController *listVC = segue.destinationViewController;
+    
+    if (indexPath.section == 0)
+    {
+        NSString *familyName = self.familyNames[indexPath.row];
+        listVC.fontNames = [[UIFont fontNamesForFamilyName: familyName] sortedArrayUsingSelector:@selector( compare:)];
+        listVC.navigationItem.title = familyName;
+        listVC.showsFavorites = NO;
+    }
+    else
+    {
+        listVC.fontNames = self.favoritesList.favorites;
+        listVC.navigationItem.title = @"Favorites";
+        listVC.showsFavorites = YES;
+        
+    }
+}
+
+
+
 
 @end
