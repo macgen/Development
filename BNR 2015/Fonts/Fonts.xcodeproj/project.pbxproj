@@ -18,6 +18,7 @@
 		C6450FDE1B725CC300F9C359 /* FontsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FDD1B725CC300F9C359 /* FontsUITests.m */; };
 		C6450FED1B72603A00F9C359 /* FavoritesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C6450FEC1B72603A00F9C359 /* FavoritesList.m */; };
 		C68DD4BE1B73AFF5000153E1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68DD4BD1B73AFF5000153E1 /* RootViewController.m */; };
+		C6FFB2761B7B94FF0094DFAA /* FontInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FFB2751B7B94FF0094DFAA /* FontInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		C6450FEC1B72603A00F9C359 /* FavoritesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesList.m; sourceTree = "<group>"; };
 		C68DD4BC1B73AFF5000153E1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C68DD4BD1B73AFF5000153E1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		C6FFB2741B7B94FF0094DFAA /* FontInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontInfoViewController.h; sourceTree = "<group>"; };
+		C6FFB2751B7B94FF0094DFAA /* FontInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				C61CBD411B74FDBB0019E6A5 /* FontListViewController.m */,
 				C60D6A8E1B78F3D500D02551 /* FontSizesViewController.h */,
 				C60D6A8F1B78F3D500D02551 /* FontSizesViewController.m */,
+				C6FFB2741B7B94FF0094DFAA /* FontInfoViewController.h */,
+				C6FFB2751B7B94FF0094DFAA /* FontInfoViewController.m */,
 				C6450FC11B725CC300F9C359 /* Main.storyboard */,
 				C6450FC41B725CC300F9C359 /* Assets.xcassets */,
 				C6450FC61B725CC300F9C359 /* LaunchScreen.storyboard */,
@@ -286,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C60D6A901B78F3D500D02551 /* FontSizesViewController.m in Sources */,
+				C6FFB2761B7B94FF0094DFAA /* FontInfoViewController.m in Sources */,
 				C6450FED1B72603A00F9C359 /* FavoritesList.m in Sources */,
 				C6450FBD1B725CC300F9C359 /* AppDelegate.m in Sources */,
 				C68DD4BE1B73AFF5000153E1 /* RootViewController.m in Sources */,

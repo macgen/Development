@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8164.2" systemVersion="15A262" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8083.2"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label width="135" alignment="left" text="Weather in London" textAlignment="center" id="kKH-zf-aNZ">
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                        </label>
+                        <imageView height="84" alignment="left" id="teu-8h-1gQ">
+                            <variation key="device=watch42mm" height="109"/>
+                        </imageView>
+                        <button width="1" alignment="left" title="Update" id="QIO-Wq-m5M">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="updateAction" destination="AgC-eL-Hgc" id="E75-af-Qcg"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="weatherImage" destination="teu-8h-1gQ" id="2Nb-S3-C6z"/>
+                        <outlet property="weatherType" destination="kKH-zf-aNZ" id="jyh-0C-wR3"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="919.74358974358984" y="635.97435897435901"/>
+        </scene>
+    </scenes>
+</document>

@@ -17,4 +17,6 @@
 - (void) addFavorites: (id) item;
 - (void) removeFavorites: (id) item;
 
+- (void) moveItemAtIndex: (NSInteger)from toIndex:(NSInteger)to;
+
 @end

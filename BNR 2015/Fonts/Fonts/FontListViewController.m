@@ -9,6 +9,7 @@
 #import "FontListViewController.h"
 #import "FavoritesList.h"
 #import "FontSizesViewController.h"
+#import "FontInfoViewController.h"
 
 @interface FontListViewController ()
 
@@ -25,6 +26,11 @@
     UIFont *preferredTableViewFont = [UIFont preferredFontForTextStyle: UIFontTextStyleHeadline];
                                       
     self.cellPointSize = preferredTableViewFont.pointSize;
+    
+    if (self.showsFavorites)
+    {
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    }
     
 }
 
@@ -47,6 +53,17 @@
     {
         [self.tableView reloadData];
     }
+}
+
+- (BOOL) tableView:(nonnull UITableView *)tableView canEditRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    return self.showsFavorites;
+}
+
+- (void) tableView:(nonnull UITableView *)tableView moveRowAtIndexPath:(nonnull NSIndexPath *)sourceIndexPath toIndexPath:(nonnull NSIndexPath *)destinationIndexPath
+{
+    [[FavoritesList sharedFavoriteList] moveItemAtIndex: sourceIndexPath.row toIndex: destinationIndexPath.row];
+    self.fontNames = [FavoritesList sharedFavoriteList].favorites;
 }
 
 #pragma mark - Table view data source
@@ -77,62 +94,32 @@
     UIFont *font = [self fontForDisplayAtIndexPath: indexPath];
     [segue.destinationViewController navigationItem].title = font.fontName;
     
-    FontSizesViewController *sizesVC = segue.destinationViewController;
-    sizesVC.font = font;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:  forIndexPath:indexPath];
+    if ([segue.identifier isEqualToString:@"ShowFontSizes"])
+    {
+        FontSizesViewController *sizesVC = segue.destinationViewController;
+        sizesVC.font = font;
+    }
+    else if ([segue.identifier isEqualToString: @"ShowFontInfo"])
+    {
+        FontInfoViewController *infoVC = segue.destinationViewController;
+        infoVC.font = font;
+        infoVC.favorite = [[FavoritesList sharedFavoriteList].favorites containsObject: font.fontName];
+    }
     
-    // Configure the cell...
+}
+
+- (void) tableView:(nonnull UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    if (!self.showsFavorites) return;
     
-    return cell;
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSString *favorite = self.fontNames[indexPath.row];
+        [[FavoritesList sharedFavoriteList] removeFavorites: favorite];
+        self.fontNames = [FavoritesList sharedFavoriteList].favorites;
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation: UITableViewRowAnimationFade];
+    }
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

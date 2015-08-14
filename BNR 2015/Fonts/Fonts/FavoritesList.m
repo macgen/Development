@@ -66,6 +66,13 @@
     [self saveFavorites];
 }
 
+- (void) moveItemAtIndex: (NSInteger)from toIndex:(NSInteger)to
+{
+    id item = _favorites[from];
+    [_favorites removeObjectAtIndex: from];
+    [_favorites insertObject: item atIndex: to];
+    [self saveFavorites];
+}
 
 - (void) saveFavorites
 {
