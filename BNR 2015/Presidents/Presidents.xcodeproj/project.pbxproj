@@ -16,6 +16,7 @@
 		C6456CDE1B862D32007E932F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6456CDC1B862D32007E932F /* LaunchScreen.storyboard */; };
 		C6456CE91B862D32007E932F /* PresidentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6456CE81B862D32007E932F /* PresidentsTests.m */; };
 		C6456CF41B862D32007E932F /* PresidentsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6456CF31B862D32007E932F /* PresidentsUITests.m */; };
+		C6F3D9451B8E12920086EB83 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6F3D9441B8E12920086EB83 /* PresidentList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C6456CEF1B862D32007E932F /* PresidentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresidentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6456CF31B862D32007E932F /* PresidentsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresidentsUITests.m; sourceTree = "<group>"; };
 		C6456CF51B862D32007E932F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6F3D9441B8E12920086EB83 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				C6456CDA1B862D32007E932F /* Assets.xcassets */,
 				C6456CDC1B862D32007E932F /* LaunchScreen.storyboard */,
 				C6456CDF1B862D32007E932F /* Info.plist */,
+				C6F3D9441B8E12920086EB83 /* PresidentList.plist */,
 				C6456CCB1B862D31007E932F /* Supporting Files */,
 			);
 			path = Presidents;
@@ -251,6 +254,7 @@
 				C6456CDE1B862D32007E932F /* LaunchScreen.storyboard in Resources */,
 				C6456CDB1B862D32007E932F /* Assets.xcassets in Resources */,
 				C6456CD91B862D32007E932F /* Main.storyboard in Resources */,
+				C6F3D9451B8E12920086EB83 /* PresidentList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +508,7 @@
 				C6456CFA1B862D32007E932F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6456CFB1B862D32007E932F /* Build configuration list for PBXNativeTarget "PresidentsTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +517,7 @@
 				C6456CFD1B862D32007E932F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6456CFE1B862D32007E932F /* Build configuration list for PBXNativeTarget "PresidentsUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +526,7 @@
 				C6456D001B862D32007E932F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
