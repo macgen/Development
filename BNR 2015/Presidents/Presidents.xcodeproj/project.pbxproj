@@ -16,6 +16,7 @@
 		C6456CDE1B862D32007E932F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6456CDC1B862D32007E932F /* LaunchScreen.storyboard */; };
 		C6456CE91B862D32007E932F /* PresidentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6456CE81B862D32007E932F /* PresidentsTests.m */; };
 		C6456CF41B862D32007E932F /* PresidentsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6456CF31B862D32007E932F /* PresidentsUITests.m */; };
+		C6A497231B8F640400327547 /* LanguageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A497221B8F640400327547 /* LanguageListController.m */; settings = {ASSET_TAGS = (); }; };
 		C6F3D9451B8E12920086EB83 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6F3D9441B8E12920086EB83 /* PresidentList.plist */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		C6456CEF1B862D32007E932F /* PresidentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresidentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6456CF31B862D32007E932F /* PresidentsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresidentsUITests.m; sourceTree = "<group>"; };
 		C6456CF51B862D32007E932F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6A497211B8F640400327547 /* LanguageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageListController.h; sourceTree = "<group>"; };
+		C6A497221B8F640400327547 /* LanguageListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageListController.m; sourceTree = "<group>"; };
 		C6F3D9441B8E12920086EB83 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +115,8 @@
 				C6456CD21B862D31007E932F /* MasterViewController.m */,
 				C6456CD41B862D31007E932F /* DetailViewController.h */,
 				C6456CD51B862D31007E932F /* DetailViewController.m */,
+				C6A497211B8F640400327547 /* LanguageListController.h */,
+				C6A497221B8F640400327547 /* LanguageListController.m */,
 				C6456CD71B862D32007E932F /* Main.storyboard */,
 				C6456CDA1B862D32007E932F /* Assets.xcassets */,
 				C6456CDC1B862D32007E932F /* LaunchScreen.storyboard */,
@@ -282,6 +287,7 @@
 				C6456CD01B862D31007E932F /* AppDelegate.m in Sources */,
 				C6456CD31B862D31007E932F /* MasterViewController.m in Sources */,
 				C6456CCD1B862D31007E932F /* main.m in Sources */,
+				C6A497231B8F640400327547 /* LanguageListController.m in Sources */,
 				C6456CD61B862D31007E932F /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
