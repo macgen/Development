@@ -10,42 +10,31 @@
 
 int main()
 {
-    //read in multiple numbers from a user input and compare if their numbers repeat..
+   //Playing with pointers..
+
+    //Pointer that's constant can be changed...
+    const int value = 5;
+    const int *ptr = &value;
     
-    int currentNumber = 0;
-    int nextNumber = 0;
+    const int anotherValue = 10;
+    ptr = &anotherValue;
     
-    //verify that we have a number first to start...
-    if (std::cin >> currentNumber)
-    {
-        //every number occurs atleast once...
-        int count = 1;
-        
-        //now that we have a fist value, check the next number to see if its the same as the previous number...
-        //keep going until there is no more number of eof
-        while (std::cin >> nextNumber)
-        {
-            //if the secon number matches the first number.. increment the count...
-            if (currentNumber == nextNumber)
-            {
-                //increment the count...
-                count++;
-            }
-            else
-            {
-                std::cout << currentNumber << " occured: " << count << " times." << std::endl;
-                
-                //next number no longer matches so go on...
-                currentNumber = nextNumber;
-                count = 1;
-                
-                
-            }
-        }
-        
-        std::cout << currentNumber << " occured: " << count << " times." << std::endl;
-        
-    }
+    std::cout << "Value of ptr: " << *ptr << std::endl;
+    
+    
+    //Constant Pointers: Once set, you can't change the initial value..
+    int value2 = 20;
+    int value3 = 50;
+    int *const anotherPointer = &value2;
+    
+    //anotherValue = &value3; - this can't be changed since its a Constant Pointer...
+    
+    std::cout << "Value of anotherPointer: " << *anotherPointer << std::endl;
+    
+    
+    int value4 = 100;
+    double value5 = 400;
+
     
     return 0;
 }

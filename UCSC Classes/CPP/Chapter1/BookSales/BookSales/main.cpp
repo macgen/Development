@@ -9,6 +9,8 @@
 #include <iostream>
 #include "Sales_item.h"
 
+using namespace std;
+
 int main()
 {
     //Instantiate a Sales_item...
@@ -22,8 +24,18 @@ int main()
     Sales_item book1;
     Sales_item book2;
     
-    std::cin >> book1 >> book2;
-    std::cout << "The sum of 2 books: " << book1 + book2 << std::endl;
+    cin >> book1 >> book2;
+    cout << "The sum of 2 books: " << book1 + book2 << std::endl;
+    
+    if (book1.isbn() == book2.isbn())
+    {
+        cout << "The ISBN Numbers are the same: proceeding..." << endl;
+        cout << book1 + book2 << endl;
+    }
+    else
+    {
+        cout << "The ISBN numbers do not match. " << endl;
+    }
     
     return 0;
 }
