@@ -13,47 +13,117 @@
 
 using namespace std;
 
-/**
- * Function: name
- * Purpose:
- *      Describe the purpose of the function
- * Parameters:
- *      argument1: description <Passed by reference>
- * Local Variable:
- *      variable1: holds some data
- *      varibale2: holds some data
- **/
-
 class MagicSquare
 {
     private:
-    int input;                               /* User defined integer       */
-    int **loc = 0;                         /* Array holding all          */
-    /*  input*input values.       */
-    int row;                                 /* Determines row of matrix   */
-    int col;                                 /* Determines col of matrix   */
-    int value;                               /* Integer between 1 and      */
-    /*  input*input               */
-    int otherdiag;                           /* Total of one matrix diagonal*/
-    
-    
+        int input;              // User defined integer
+        int **loc = 0;          // Array holding all
+        int row;                // Determines row of matrix
+        int col;                // Determines col of matrix
+        int value;              // Integer between 1 and
+        int otherdiag;          // Total of one matrix diagonal*/
+
     public:
-    void userInput();
-    void displayResults();
-    void init();
-    void clean();
-    
+        void userInput();       //Method to get user input
+        void displayResults();  //Displaying results
+        void createMatrix();    //Allocating and creating the matrix table
+        void clean();           //Cleaning up the memory
 };
 
-void MagicSquare::init()
+/**
+ * Function: userInput
+ * Purpose:
+ *      Get a valid input from the user by asking the user to provide the number of rows & column for the matrix table
+ * Parameters:
+ *      No Pramater: NA
+ * Class MemberVariable:
+ *      input: Int that holds the user input.
+ *      loc: Int Array that 2 Dimentional Array.
+ *      row: Int that holds the number of rows.
+ *      col: Int that holds the number of columns.
+ **/
+void MagicSquare::userInput()
 {
+    cout << "Enter a positive, odd integer (-1 to exit program): " << endl;
+    
+    while (cin >> input || !cin.eof())
+    {
+        if (cin.good())
+        {
+            if (input == -1)
+            {
+                //Clean up the allocated memory
+                clean();
+                
+                cout << "\nBye bye!\n";
+                break;
+            }
+            
+            if (input <= 0)
+            {
+                cout << "Sorry, but the integer has to be positive." << endl;
+                cout << "\nEnter a positive, odd integer (-1 to exit program): " << endl;
+                continue;
+            }
+            
+            if (input > 13)
+            {
+                cout << "Sorry, but the integer has to be less than 15. " << endl;
+                cout << "\nEnter a positive, odd integer (-1 to exit program): " << endl;
+                continue;
+            }
+            
+            if (input % 2 == 0)
+            {
+                cout << "Sorry, but the integer has to be odd. " << endl;
+                cout << "\nEnter a positive, odd integer (-1 to exit program): " << endl;
+                continue;
+            }
+            
+            createMatrix();
+        }
+        else if (!isdigit(input))
+        {
+            cout << "Invalid Input Detected: Sorry but your input must be an integer." << endl;
+            
+        }
+        else
+        {
+            cout << "HERE ?";
+        }
+        
+        
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        
+        cout << "\nEnter a positive, odd integer (-1 to exit program): " << endl;
+    }
+}
+
+/**
+ * Function: createMatrix
+ * Purpose:
+ *      Allocates memory to create the matrix
+ * Parameters:
+ *      No Pramater: NA
+ * Class MemberVariable:
+ *      input: Int that holds the user input.
+ *      loc: Int Array that 2 Dimentional Array.
+ *      row: Int that holds the number of rows. 
+ *      col: Int that holds the number of columns.
+ **/
+void MagicSquare::createMatrix()
+{
+    //Allocate the memmory for the number of rows in the matrix with the number provided by the end user
     loc = new int*[input + 1];
     
+    //ALlocate the memor for the each column per row
     for (row = 0; row <= input; row++)
     {
         loc[row] = new int[input + 1];
     }
     
+    //Initially fill in each cells with the ZERO value
     for (row = 0; row <= input; row++)
     {
         for (col = 0; col <= input; col++)
@@ -63,243 +133,162 @@ void MagicSquare::init()
         }
     }
     
-    /*  rows 1 to input*input and */
-    /*  columns 1 to input*input. */
-    /* Row totals will reside in  */
-    /*  loc[row][0], where row is */
-    /*  the row number, while the */
-    /*  column totals will reside */
-    /*  in loc[0][col], where col */
-    /*  is the column number.     */
-    row = 1;                              /* First value gets to sit on */
-    col = input/2 + 1;                    /*  1st row, middle of matrix.*/
-    otherdiag = 0;
+    // rows 1 to input*input and columns 1 to input*input.
+    // Row totals will reside in loc[row][0], where row is the row number, while the column totals will reside in loc[0][col], where col is the column number.
 
-    /*                                                                        */
-    /*    Loop for every value up to input*input, and position value in matrix*/
-    /*                                                                        */
-    for (value = 1; value <= input*input; value++)
-    {                                     /* Loop for all values.       */
-        if (loc[row][col] > 0)             /* If some value already      */
-        {                                  /*  present, then             */
-            row += 2;                       /*  move down 1 row of prev.  */
-            if (row > input)                /*  If exceeds side, then     */
-                row -= input;                /*   go to other side.        */
-
-            col--;                          /*  move left 1 column.       */
-            if (col < 1)                    /*  If exceeds side, then     */
-                col = input;                 /*   go to other side.        */
-        }
-
-        loc[row][col] = value;             /* Assign value to location.  */
-
-        /*                                                                        */
-        /*       Add to totals                                                    */
-        /*                                                                        */
-        loc[0][col] += value;              /* Add to its column total.   */
-        loc[row][0] += value;              /* Add to its row total.      */
-        if (row == col)                    /* Add to diagonal total if   */
-            loc[0][0] += value;             /*  it falls on the diagonal. */
-
-        if (row+col == input+1)            /* Add to other diagonal if   */
-            otherdiag += value;             /*  it falls on the line.     */
-
-        /*                                                                        */
-        /*       Determine where new row and col are                              */
-        /*                                                                        */
-        row--;
-        if (row < 1)                       /* If row exceeds side then   */
-            row = input;                    /*  goto other side.          */
-        col++;
-        if (col > input)                   /* If col exceeds side then   */
-            col = 1;                        /*  goto other side.          */
-    }                                     /* End of getting all values. */
-}
-
-void MagicSquare::userInput()
-{
-//    cout << "Enter a number of rows for the matrix table. (-1 to exit program): " << endl;
-//    cout << "[INPUT]: ";
-//    
-//    while (cin >> input || !cin.eof())
-//    {
-//        if (cin.good())
-//        {
-//            if (input == -1)
-//            {
-//                //cout << "Exited the Program as Requested.";
-//                break;
-//            }
-//            else if (input <= 0)
-//            {
-//                cout << "Invalid Input Detected: Sorry, but the number of rows must be greater than 0." << endl;
-//                break;
-//            }
-//            else
-//            {
-//                cout << "You entered: " << input << endl;
-//                break;
-//            }
-//        }
-//        else if (!isdigit(input))
-//        {
-//            cout << "Invalid Input Detected: Sorry but your input must be an integer." << endl;
-//            cin.clear();
-//            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-//        }
-//        else
-//        {
-//            
-//        }
-//    
-//        cout << "Enter a number of rows for the matrix table. (-1 to exit program): " << endl;
-//        
-//    }
+    // First value gets to sit on first row
+    row = 1;
     
-        cout << "Enter a positive, odd integer (-1 to exit program):\n";
-        while (cin >> input || !cin.eof())
+    //1st row, middle of matrix
+    col = input/2 + 1;
+    
+    //Initial diagnoal value
+    otherdiag = 0;
+    
+    /* Loop for every value up to input*input, and position value in matrix*/
+    for (value = 1; value <= input*input; value++)
+    {
+        
+        // Loop for all values if some value already present, then move down 1 row of prev.
+        // If exceeds side, then go to other side. move left 1 column.
+        // If exceeds side, then go to other side.
+        if (loc[row][col] > 0)
         {
-            if (cin.good())
+            row += 2;
+            if (row > input)
             {
-                
-                if (input == -1)
-                {
-                    break;
-                }
-                
-                if (input <= 0)
-                {
-                    printf("Sorry, but the integer has to be positive.\n");
-                    printf("\nEnter a positive, odd integer (-1 to exit program):\n");
-                    continue;
-                }
-                
-                if (input > 13)
-                {
-                    printf("Sorry, but the integer has to be less than 15.\n");
-                    printf("\nEnter a positive, odd integer (-1 to exit program):\n");
-                    continue;
-                }
-                
-                if (input%2 == 0)
-                {
-                    printf("Sorry, but the integer has to be odd.\n");
-                    printf("\nEnter a positive, odd integer (-1 to exit program):\n");
-                    continue;
-                }
-                
-                break;
-            }
-            else if (!isdigit(input))
-            {
-                cout << "Invalid Input Detected: Sorry but your input must be an integer." << endl;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                continue;
+                row -= input;
             }
             
-            cout << "Enter a positive, odd integer (-1 to exit program):\n";
+            col--;
+            if (col < 1)
+            {
+                col = input;
+            }
+            
         }
+        
+        // Assign value to location.
+        loc[row][col] = value;
+        
+        // Add to totals
+        loc[0][col] += value;              /* Add to its column total.   */
+        loc[row][0] += value;              /* Add to its row total.      */
+        
+        if (row == col)                    /* Add to diagonal total if   */
+        {
+            loc[0][0] += value;             /*  it falls on the diagonal. */
+        }
+        
+        
+        if (row+col == input+1)            /* Add to other diagonal if   */
+        {
+            otherdiag += value;             /*  it falls on the line.     */
+        }
+        
+        /* Determine where new row and col are                              */
+        row--;
+        if (row < 1)                       /* If row exceeds side then   */
+        {
+            row = input;                    /*  goto other side.          */
+        }
+        
+        col++;
+        if (col > input)                   /* If col exceeds side then   */
+        {
+            col = 1;                        /*  goto other side.          */
+        }
+        
+    }
     
-    
+    //Display the results of the matrix
+    displayResults();
 }
 
 
 
 /**
- * Function: displayResults
+ * Function: displayMatrix
  * Purpose:
- *      Prints the data inside the matrix
+ *      Display the data in the matrix.
  * Parameters:
- *      argument1: description <Passed by reference>
- * Local Variable:
- *      variable1: holds some data
- *      varibale2: holds some data
+ *      No Pramater: NA
+ * Class MemberVariable:
+ *      input: Int that holds the user input.
+ *      loc: Int Array that 2 Dimentional Array.
+ *      row: Int that holds the number of rows.
+ *      col: Int that holds the number of columns.
  **/
 void MagicSquare::displayResults()
 {
-//    row = 1;                              /* First value gets to sit on */
-//    col = input/2 + 1;                    /*  1st row, middle of matrix.*/
-//    otherdiag = 0;
-//    
-//    cout << "\nThe number you selected was " << input << endl;
-//    cout << "and the matrix is:\n\n";
-//    for (row = 1; row <= input; row++)     /* Loop: print a row at a time*/
-//    {
-//        cout << "   ";                   /* Create column for diag.total*/
-//        for (col = 1; col <=input; col++)
-//        {
-//            cout << loc[row][col];    /* Print values found in a row*/
-//        }
-//        
-//        cout << " = " << "\n" << loc[row][0];    /* Print total of row.        */
-//    }
+    //   Print out the matrix with its totals
+    cout << "\nThe number you selected was " << input << " and the matrix is:\n\n";
     
-    //test display the newly created matrix table
-//    for (row = 0; row < input; row++)
-//    {
-//        for (col = 0; col < input; col++)
-//        {
-//            cout << loc[row][col] << " ";
-//        }
-//        
-//        cout << endl;
-//    }
-    
-    /*                                                                        */
-    /*    Print out the matrix with its totals                                */
-    /*                                                                        */
-    cout << "\nThe number you selected was " << input << endl;
-    cout << ", and the matrix is:\n\n";
-    for (row = 1; row <=input; row++)     /* Loop: print a row at a time*/
+    //Loop through each row and fill in each cell with the value
+    for (row = 1; row <=input; row++)
     {
-        cout << "     ";                   /* Create column for diag.total*/
+        //First Column is left empty
+        cout << "     ";
+        
         for (col = 1; col <=input; col++)
         {
-            cout << setw(5) << loc[row][col];    /* Print values found in a row*/
+            // Print values found in a row
+            cout << setw(5) << loc[row][col];
         }
         
-        cout << " = " << setw(5) << loc[row][0] << endl;    /* Print total of row.        */
+        // Print total of row.
+        cout << " = " << setw(5) << loc[row][0] << endl;
     }
 
-    /*                                                                        */
-    /*    Print out the totals for each column, starting with diagonal total. */
-    /*                                                                        */
-    for (col = 0; col <=input; col++)     /* Print line separating the  */
-        printf("-----");                   /*  value matrix and col totals*/
-    printf("\n%5d",otherdiag);            /* Print out the diagonal total*/
-    for (col = 1; col <=input; col++)
-        printf("%5d",loc[0][col]);         /* Print out the column totals*/
-    printf("   %5d\n",loc[0][0]);         /* Print out the other diagonal*/
-    /*  total                     */
-    printf("\nEnter a positive, odd integer (-1 to exit program):\n");
+    //Print out the totals for each column, starting with diagonal total.
+    // Print line separating the value matrix and col totals
+    for (col = 0; col <=input; col++)
+    {
+        cout << "-----";
+    }
 
-                                       /* End of while input>-1 loop */
-    printf("\nBye bye!\n");
+    // Print out the diagonal total
+    cout << "\n" << setw(5) << otherdiag;
+    for (col = 1; col <=input; col++)
+    {
+        // Print out the column totals
+        cout << setw(5) << loc[0][col];
+    }
+    
+    // Print out the other diagonal
+    cout << "   " << setw(5) << loc[0][0] << "\n";
+
 }
 
+/**
+ * Function: clean
+ * Purpose:
+ *      Clean any allocated memory upon exiting the program.
+ * Parameters:
+ *      No Pramater: NA
+ * Class MemberVariable:
+ *      loc: Int Array that 2 Dimentional Array.
+ **/
 void MagicSquare::clean()
 {
     //clean up..
     for (int i = 0; i < input; i++)
     {
+        //Delete the allocated memory for the columns
         delete [] loc[i];
     }
     
+    //Delete the memory allocated for the row
     delete [] loc;
 }
 
 int main(int argc, const char * argv[])
 {
-    
+    //Instantiate an object of MagicSquare
     MagicSquare mySquare;
+    
+    //Call userInput method
     mySquare.userInput();
-    mySquare.init();
-    mySquare.displayResults();
-    
-    //mySquare.clean();
-    
-    
-    
+
     return 0;
 }
