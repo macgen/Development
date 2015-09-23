@@ -5,6 +5,9 @@
 //  Created by James Kim on 9/17/15.
 //  Copyright © 2015 James J. Kim. All rights reserved.
 //
+//  OS: Mac OS X 10.11
+//  Compiler: LLVM
+//  IDE: XCode
 
 #include <iostream>
 #include <limits>
