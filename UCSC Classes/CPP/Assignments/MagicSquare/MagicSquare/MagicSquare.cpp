@@ -44,8 +44,10 @@ class MagicSquare
  **/
 void MagicSquare::userInput()
 {
+    //Prompt the user for the input
     cout << "Enter a positive, odd integer (-1 to exit program): " << endl;
     
+    //As long as valid input or not eof, continue on.
     while (cin >> input || !cin.eof())
     {
         if (cin.good())
@@ -82,16 +84,12 @@ void MagicSquare::userInput()
             
             createMatrix();
         }
+        //Make sure that the input isnt anything but a digit.
         else if (!isdigit(input))
         {
             cout << "Invalid Input Detected: Sorry but your input must be an integer." << endl;
             
         }
-        else
-        {
-            cout << "HERE ?";
-        }
-        
         
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');

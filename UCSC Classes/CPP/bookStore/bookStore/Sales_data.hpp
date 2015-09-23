@@ -6,6 +6,9 @@
 //  Copyright © 2015 James J. Kim. All rights reserved.
 //
 
+#ifndef SALES_DATA_H
+#define SALES_DATA_H
+
 #include <iostream>
 #include <string>
 
@@ -17,3 +20,5 @@ struct Sales_data
     unsigned units_sold = 0;
     double revenue = 0.0;
 };
+
+#endif

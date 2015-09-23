@@ -7,6 +7,9 @@
 //
 
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 int main()
 {
@@ -31,9 +34,12 @@ int main()
     
     std::cout << "Value of anotherPointer: " << *anotherPointer << std::endl;
     
+    string s = "Hello World!";
     
-    int value4 = 100;
-    double value5 = 400;
+    for (decltype(s.size()) index = 0)
+    {
+        
+    }
 
     
     return 0;
