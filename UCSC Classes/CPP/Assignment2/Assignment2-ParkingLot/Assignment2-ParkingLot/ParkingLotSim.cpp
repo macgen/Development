@@ -20,12 +20,12 @@ using namespace std;
 #define VEHICLE_NOTFOUND "We were unable to locate your vehicle. You either came to the wrong place or we SOLD your car."
 
 //enum for identifying user selection and actions
-enum action
+enum UserCommands
 {
-    DISPLAY='d',
-    PARK='p',
-    RETRIEVE='r',
-    EXIT='e'
+    DISPLAY='D',
+    PARK='P',
+    RETRIEVE='R',
+    QUIT='Q'
 };
 
 //Every time a car is created... a new link is created...
@@ -36,6 +36,7 @@ enum action
 class Vehicle
 {
     private:
+        UserCommands commands;
         char userSelection; //ivar to hold the user selection
         void init();
         void parkNewVehicle();
@@ -166,26 +167,28 @@ void Vehicle::displayPrompt()
         //changs lowercase user input to uppercase
         userSelection = toupper(userSelection);
         
-        if (isalpha(userSelection) && cin.good())
+        UserCommands commands = (UserCommands)userSelection;
+        
+        if (isalpha(commands) && cin.good())
         {
-            switch (userSelection)
+            switch (commands)
             {
-                case 'D':
+                case DISPLAY:
                     //cout << "You chose: " << userSelection << endl;
                     displayParked();
                     break;
-                case 'P':
+                case PARK:
                     //cout << "You chose: " << userSelection << endl;
                     parkNewVehicle();
                     break;
-                case 'R':
+                case RETRIEVE:
                     cout << "Ticket No.: ";
                     int retrievalTicketNumber;
                     cin >> retrievalTicketNumber;
                     
                     retrieveCar(retrievalTicketNumber);
                     break;
-                case 'Q':
+                case QUIT:
                     cout << "Thank you and have you nice day !" << endl;
                     return;
                 default:
