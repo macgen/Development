@@ -5,6 +5,9 @@
 //  Created by James Kim on 9/30/15.
 //  Copyright © 2015 James J. Kim. All rights reserved.
 //
+//  OS: Mac OS X 10.11
+//  Compiler: LLVM
+//  IDE: XCode
 
 #include <iostream>
 #include <cctype>
@@ -14,9 +17,11 @@
 
 using namespace std;
 
+
+
 #define USER_INSTRUCTION "D)isplay   P)ark   R)etrieve   Q)uit\n"
 #define INVALID_INPUT "\nInvalid Selection. Please try again\n."
-#define VEHICLE_FOUND "Vehicle is located in Alley A."
+#define VEHICLE_FOUND "Retrieving Vehicle with License Plate #: "
 #define VEHICLE_NOTFOUND "We were unable to locate your vehicle. You either came to the wrong place or we SOLD your car."
 
 //enum for identifying user selection and actions
@@ -28,38 +33,47 @@ enum UserCommands
     QUIT='Q'
 };
 
-//Every time a car is created... a new link is created...
-// each car (link) will have a 1) ticketNumber
-
-
 
 class Vehicle
 {
     private:
-        UserCommands commands;
-        char userSelection; //ivar to hold the user selection
-        void init();
-        void parkNewVehicle();
-        void displayParked();
-        void retrieveCar(int tNumber);
+        unsigned int globalTicketNumber; //varibale to keep track of the ticket number
     
-        Vehicle *frontVehicle; //*frontVehicle;
-        Vehicle *current; //*currentVehicle;
-        Vehicle *lastVehicle; //*rearVehicle;
+        UserCommands commands;          //declaring enum for user commands
+        char userSelection;             //ivar to hold the user selection
+
+        void parkNewVehicle();          //Park New Vehicle
+        void displayParked();           //Display
+        void retrieveCar(int tNumber);  //Retrieve
+    
+        void swapVehicle(Vehicle &fromVehicle, Vehicle &toVehicle);
+    
+        Vehicle *frontVehicle;          // pointer that points to the first node in the link list
+        Vehicle *previous;              // pointer that points to the node before the current in the link list
+        Vehicle *current;               // pointer that points to the current node in the link list
+        Vehicle *lastVehicle;           // pointer that points to the last node in the link list
+        Vehicle *removeVehicle;         //this pointer is used to assign a node that needs to be deleted
     
     public:
     
-        Vehicle();
-    
-        unsigned int globalTicketNumber; //varibale to keep track of the ticket number
-        unsigned int ticketNumber; // ticket number per vehicle
-        Vehicle *linkVehicleBehind; //pointer to the car parked behind
-    
-
-    
-        void displayPrompt(); //prompt the user with the instruction
+        Vehicle();                      //default constructor
+        unsigned int ticketNumber;      // ticket number per vehicle
+        Vehicle *linkVehicleBehind;     //pointer to the car parked behind
+        void displayPrompt();           //prompt the user with the instruction
 };
 
+/**
+ * Function: Vehicle = default constructor
+ * Purpose:
+ *      Initializes all the pointers once a Vehicle Object is instantiated.
+ * Parameters:
+ *      No Pramater: NA
+ * Class MemberVariable:
+ *      current: all assigned to null pointer.
+ *      lastVehicle: all assigned to null pointer
+ *      frontVehicle: all assigned to null pointer
+ *      globalTicketNumber: sets the ticket number to 0.
+ **/
 Vehicle::Vehicle()
 {
     current = 0;
@@ -70,6 +84,18 @@ Vehicle::Vehicle()
 }
 
 
+/**
+ * Function: parkNewVehicle()
+ * Purpose:
+ *      Instantiates a new Vehicle object and add/create a new node in the link list.
+ * Parameters:
+ *      No Pramater: NA
+ * Class MemberVariable:
+ *      current: Points to current node.
+ *      lastVehicle: Points to the last node in the link list
+ *      frontVehicle: Points to the first node in the link list
+ *      globalTicketNumber: increments the ticket number and assign to the member variable
+ **/
 void Vehicle::parkNewVehicle()
 {
     // first if statement is only called when the very vehicle is created and ready to be parked
@@ -106,6 +132,18 @@ void Vehicle::parkNewVehicle()
     }
 }
 
+/**
+ * Function: retrieveCar
+ * Purpose:
+ *      Iterates through the link list and finds the user requested vehicle.
+ * Parameters:
+ *      tNumber: ticket number that user is requesting
+ * Class MemberVariable:
+ *      current: Points to current node.
+ *      lastVehicle: Points to the last node in the link list
+ *      frontVehicle: Points to the first node in the link list
+ *      globalTicketNumber: increments the ticket number and assign to the member variable
+ **/
 void Vehicle::retrieveCar(int tNumber)
 {
     //reset the current pointer to point to the front of the vehicle
@@ -114,41 +152,86 @@ void Vehicle::retrieveCar(int tNumber)
     //iterate through all the link until it hits the end
     while (current != 0)
     {
-        //if the passed in tNumber matches the current ticket number, you have found the vehicle
-        if (tNumber == current->ticketNumber)
+        
+        
+        //if this is the very first node, then change the pointer of head
+        if (tNumber == current->ticketNumber && current == frontVehicle)
         {
-            cout << VEHICLE_FOUND << " - License Plate #: " << current << " Ticket: " << current->ticketNumber << endl;;
+            
+            //frontVehicle pointer will now point to the second node
+            frontVehicle = current->linkVehicleBehind;
+            
+            //assign the current pointer to the remove ptr
+            removeVehicle = current;
+            
+            //alert the user
+            cout << VEHICLE_FOUND << current << " Ticket: " << current->ticketNumber << endl;
+            
+            //assign the next node to the current ptr
+            current = current->linkVehicleBehind;
+            
+            //delete the retrieved node
+            delete removeVehicle;
+            globalTicketNumber--;
+            
+            //assign the previous link member to the current
+            previous->linkVehicleBehind = current;
+            
+            break;
+        } // if the ticketNumber matches the current ticket number
+        else if (tNumber == current->ticketNumber)
+        {
+            
+            removeVehicle = current;
+            cout << "Retrieving Vehicle with License Plate #: " << current << endl;
+            current = current->linkVehicleBehind;
+            delete removeVehicle;
+            globalTicketNumber--;
+            previous->linkVehicleBehind = current;
+            break;
+            
+        } //if this is the last node in the link list
+        else if (current->linkVehicleBehind == 0 && lastVehicle == current)
+        {
+            removeVehicle = current;
+            previous->linkVehicleBehind = 0;
+            delete removeVehicle;
+            (globalTicketNumber > 0) ? globalTicketNumber-- : 0;
+            current = previous;
+            
+            cout << "All the vehicles retrieved. No more vehicles in Alley A" << endl;
             break;
         }
         else //else move the current to the next link
         {
+            previous = current;
             current = current->linkVehicleBehind;
         }
     }
-    
-    // if the current pointer has reached the end and nothing has found, please return the message
-    if (current == 0)
-    {
-        cout << VEHICLE_NOTFOUND << endl;
-    }
-    
-    
 }
 
+
+/**
+ * Function: displayParked()
+ * Purpose:
+ *      Iterates through the link list and displays vehicles.
+ * Parameters:
+ *      No Pramater: NA
+ * Class MemberVariable:
+ *      current: Points to current node.
+ *      lastVehicle: Points to the last node in the link list
+ *      frontVehicle: Points to the first node in the link list
+ *      globalTicketNumber: increments the ticket number and assign to the member variable
+**/
 void Vehicle::displayParked()
 {
-    // check if no ticket was ever generated, if so, alert the caller
-    if (globalTicketNumber == 0)
-    {
-        cout << "Currently Alley A is Empty." << endl;
-    }
-    else // this simply tells you how many cars are parked in Alley A.
-    {
-        cout << "You currently have " << globalTicketNumber << " vehicles parked in Alley A" << endl;
-    }
-    
     //change the current pointer to the vehicle in front
     current = frontVehicle;
+    
+    if (current == 0)
+    {
+        cout << "Alley A is empty. " << endl;
+    }
     
     //while the current pointer is not at the end
     while (current != 0)
@@ -156,8 +239,21 @@ void Vehicle::displayParked()
         cout << "License Plate #: " << current << " Ticket: " << current->ticketNumber << endl;
         current = current->linkVehicleBehind;
     }
+    
 }
 
+/**
+ * Function: displayPrompt()
+ * Purpose:
+ *      Displays uer with a user input menu.
+ * Parameters:
+ *      No Pramater: NA
+ * Class MemberVariable:
+ *      current: Points to current node.
+ *      lastVehicle: Points to the last node in the link list
+ *      frontVehicle: Points to the first node in the link list
+ *      globalTicketNumber: increments the ticket number and assign to the member variable
+ **/
 void Vehicle::displayPrompt()
 {
     cout << USER_INSTRUCTION;
@@ -182,11 +278,19 @@ void Vehicle::displayPrompt()
                     parkNewVehicle();
                     break;
                 case RETRIEVE:
+                    
+                    // if the global ticket number is decremented to 0, this means there are no more vehicles to retrieve
+                    if (globalTicketNumber == 0)
+                    {
+                        cout << "All the vehicles retrieved. No more vehicles in Alley A" << endl;
+                        break;
+                    }
+                    
                     cout << "Ticket No.: ";
                     int retrievalTicketNumber;
                     cin >> retrievalTicketNumber;
-                    
                     retrieveCar(retrievalTicketNumber);
+                    
                     break;
                 case QUIT:
                     cout << "Thank you and have you nice day !" << endl;
