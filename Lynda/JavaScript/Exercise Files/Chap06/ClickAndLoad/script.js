@@ -1,0 +1,21 @@
+// document.onclick = function()
+// {
+	// alert("You clicked somewhere in the document!");
+// };
+
+function prepareEventHandlers()
+{
+	var myImage = document.getElementById("mainImage");
+	myImage.onclick = function()
+	{
+		alert("You clicked the image");
+	};
+}
+
+
+window.onload = function()
+{
+	//prep anything we ned to.. 
+	prepareEventHandlers();
+	
+};

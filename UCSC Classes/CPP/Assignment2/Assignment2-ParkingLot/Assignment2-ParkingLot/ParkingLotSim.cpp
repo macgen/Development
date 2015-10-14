@@ -37,7 +37,7 @@ enum UserCommands
 class Vehicle
 {
     private:
-        unsigned int globalTicketNumber; //varibale to keep track of the ticket number
+        static unsigned int globalTicketNumber; //varibale to keep track of the ticket number
     
         UserCommands commands;          //declaring enum for user commands
         char userSelection;             //ivar to hold the user selection
@@ -47,6 +47,9 @@ class Vehicle
         void retrieveCar(int tNumber);  //Retrieve
     
         void swapVehicle(Vehicle &fromVehicle, Vehicle &toVehicle);
+
+        void incrementTicket();
+        int getCurrentTicketNumber();
     
         Vehicle *frontVehicle;          // pointer that points to the first node in the link list
         Vehicle *previous;              // pointer that points to the node before the current in the link list
@@ -61,6 +64,9 @@ class Vehicle
         Vehicle *linkVehicleBehind;     //pointer to the car parked behind
         void displayPrompt();           //prompt the user with the instruction
 };
+
+
+unsigned int Vehicle::globalTicketNumber = 0;
 
 /**
  * Function: Vehicle = default constructor
@@ -79,10 +85,17 @@ Vehicle::Vehicle()
     current = 0;
     lastVehicle = current;
     frontVehicle = current;
-    
-    globalTicketNumber = 0;
 }
 
+void Vehicle::incrementTicket()
+{
+    Vehicle::globalTicketNumber++;
+}
+
+int Vehicle::getCurrentTicketNumber()
+{
+    return globalTicketNumber;
+}
 
 /**
  * Function: parkNewVehicle()
@@ -103,14 +116,14 @@ void Vehicle::parkNewVehicle()
     if (frontVehicle == 0)
     {
         //increment the overall ticket number
-        globalTicketNumber++;
+        incrementTicket();
         
         //setting all pointers to the front, current and tail
         current = new Vehicle;
         frontVehicle = current;
         lastVehicle = current;
         
-        current->ticketNumber = 1;
+        current->ticketNumber = getCurrentTicketNumber();
         current->linkVehicleBehind = 0;
         
         // Output to alert the user with the ticket number that's being assigned
@@ -123,7 +136,8 @@ void Vehicle::parkNewVehicle()
         
         lastVehicle->linkVehicleBehind = new Vehicle;
         current = lastVehicle->linkVehicleBehind;
-        current->ticketNumber = globalTicketNumber;
+        incrementTicket();
+        current->ticketNumber = getCurrentTicketNumber();
         current->linkVehicleBehind = 0;
         lastVehicle = current;
         
@@ -172,7 +186,6 @@ void Vehicle::retrieveCar(int tNumber)
             
             //delete the retrieved node
             delete removeVehicle;
-            globalTicketNumber--;
             
             //assign the previous link member to the current
             previous->linkVehicleBehind = current;
@@ -186,7 +199,6 @@ void Vehicle::retrieveCar(int tNumber)
             cout << "Retrieving Vehicle with License Plate #: " << current << endl;
             current = current->linkVehicleBehind;
             delete removeVehicle;
-            globalTicketNumber--;
             previous->linkVehicleBehind = current;
             break;
             
