@@ -1,0 +1,11 @@
+function Rabbit(adjective)
+{
+	this.adjective = adjective;
+	this.describeMySelf = function()
+	{
+		console.log("I am a " + this.adjective + " rabbit");
+	}
+}
+
+var rabbit = new Rabbit("Happy");
+rabbit.describeMySelf;

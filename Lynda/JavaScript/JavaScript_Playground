@@ -1,0 +1,8 @@
+var Person = function()
+{
+	console.log("Instance was Created");
+};
+
+var person1 = new Person();
+var person2 = new Person();
+
