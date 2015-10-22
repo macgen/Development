@@ -9,7 +9,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include <string.h>
+#include <string>
 
 
 
@@ -29,85 +29,42 @@ enum UserSelection
 class Employee
 {
     public:
-        void setEmployeeName(const char *eName);
-        char getEmployeeName();
-        void setEmployeeAge(unsigned int eAge);
-        void setEmployeeSalary(double eSalary);
-    
-    private:
-        char employeeName[20];
-        unsigned int employeeAge;
-        double employeeSalary;
-        Employee *employeeLink;
-};
-
-void Employee::setEmployeeName(const char *eName)
-{
-    strcpy(employeeName, eName);
-}
-
-char Employee::getEmployeeName()
-{
-    return *employeeName;
-}
-
-void Employee::setEmployeeAge(unsigned int eAge)
-{
-    employeeAge = eAge;
-}
-
-void Employee::setEmployeeSalary(double eSalary)
-{
-    employeeSalary = eSalary;
-}
-
-class EmployeeTracker
-{
-    public:
-        EmployeeTracker(const char *fileName);
     
     
-
+        void add();                                 //add employee
         void displayEmployees();                    //Display Employees (reads from the file)
         bool openFile();                            //Open File
+        void saveFile();
         void closeFile();                           //Close File
         void userMenu();                            //Display User Menu
+        void sort();                                //Sort the employee array
+    
+    
+        char fileName[80];                          //FileName passed in from main
+
     
     private:
+    
+        char employeeName[20];
+        unsigned int employeeAge;
+        long double employeeSalary;
+        Employee *employeeLink;
+    
+    
+    
         ifstream inputFile;                         //ifstream input file
-        char fileName[80];                          //FileName passed in from main
         int userSelection;                          //UserSelection selection;
     
         int lineCount;                              //Get a number of lines in the record
-        Employee *employees;                 //temporary array to hold the created Employee Object
-    
-    
+        Employee **employees;                       //temporary array to hold the created Employee Object
+        
+        
         //Helper Methods
         void readData();                            //reads the input file and setups necessary back end data
-        void getNumberOfRecords();                  //reads through the file and gets the number of records
+        int getNumberOfRecords();                  //reads through the file and gets the number of records
     
-
 };
 
-/***********************************************************************
- *   Function: Constructor                                              *
- *   Purpose:  Constructor to set some data members                     *
- *   Parameters:  fileName - passed in from main function               *
- *   Local Variables:  userSelection - selection from menu              *
- ***********************************************************************/
-EmployeeTracker::EmployeeTracker(const char *fName)
-{
-    userSelection = 0;                                  //userSelection
-    lineCount = 0;                                      //initialize the number of lines
-    strcpy(fileName, fName);                   //copies the const char file name to the data member
-    
-    getNumberOfRecords();                               //get number of records
-    readData();
-    
-    employees = new Employee[lineCount - 1];
-    //DEBUG - check to see if the file name is passed
-    //cout << "Data Member: " << this->fileName << endl;
-}
 
 /***********************************************************************
  *   Function: userMenu                                                 *
@@ -115,8 +72,10 @@ EmployeeTracker::EmployeeTracker(const char *fName)
  *   Parameters:  None                                                  *
  *   Local Variables:  UserSelection ENUM                               *
  ***********************************************************************/
-void EmployeeTracker::userMenu()
+void Employee::userMenu()
 {
+    readData();
+    
     cout << "Menu Options: " << endl;
     cout << setw(10) << " " << "1. Add Employee" << endl;
     cout << setw(10) << " " << "2. Delete Employee" << endl;
@@ -136,7 +95,7 @@ void EmployeeTracker::userMenu()
             switch (selection)
             {
                 case ADD:
-                    cout << "You selected " << selection << endl;
+                    add();
                     break;
                 case DELETE:
                     cout << "You selected " << selection << endl;
@@ -145,7 +104,6 @@ void EmployeeTracker::userMenu()
                     cout << "You selected " << selection << endl;
                     break;
                 case LIST:
-                    cout << "You selected " << selection << endl;
                     displayEmployees();
                     break;
                 case SAVE:
@@ -153,7 +111,9 @@ void EmployeeTracker::userMenu()
                     break;
                 case EXIT:
                     cout << "You selected " << selection << endl;
-                    exit(0);
+                    break;
+                default:
+                    break;
             }
         }
         else
@@ -163,16 +123,94 @@ void EmployeeTracker::userMenu()
         
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        
+        userMenu();
     }
 }
 
-void EmployeeTracker::readData()
+/***********************************************************************
+ *   Function: add                                                      *
+ *   Purpose:  Prompts the user to input the new employee's info        *
+ *   Parameters:  None                                                  *
+ *   Local Variables: firstName, lastName, age and salar                *
+ *   Member Data: NA                                                    *
+ ***********************************************************************/
+void Employee::add()
 {
-    Employee *newEmployee;
-//    
-//    int elementCount = 1;
-//    int recordCount = 0;
+    string firstName;
+    string lastName;
+    unsigned int age;
+    long double salary;
     
+    cout << "Enter New Employee First Name: ";
+    cin >> firstName;
+    cout << "Enter New Employee Last Name: ";
+    cin >> lastName;
+    cout << "Enter Employee's Age: ";
+    cin >> age;
+    cout << "Emter Employee's Salary: ";
+    cin >> salary;
+    
+    fstream outputFile(fileName, ios::app);
+    outputFile << firstName << " " << lastName << ";" << age << ";" << salary;
+    outputFile.close();
+    
+    cout << "Employee Added" << endl;
+    
+}
+
+
+
+/***********************************************************************
+ *   Function: saveFile                                                 *
+ *   Purpose:  Takes the content of the array and saves it to the file  *
+ *   Parameters:  None                                                  *
+ *   Local Variables: NA                                                *
+ *   Member Data: NA                                                    *
+ ***********************************************************************/
+void Employee::saveFile()
+{
+    ofstream outputFile(fileName);
+    if (!outputFile)
+    {
+        cout << "Unable to open the file !";
+    }
+    
+    for (int i = 0; i < lineCount; i++)
+    {
+        outputFile << employees[i]->employeeName << ";";
+        outputFile << employees[i]->employeeAge << ";";
+        outputFile << employees[i]->employeeSalary << endl;
+    }
+    
+    outputFile.close();
+    
+}
+
+/***********************************************************************
+ *   Function: readData                                                 *
+ *   Purpose:  reads through each line in the file and gets number      *
+ *   Parameters:  None                                                  *
+ *   Local Variables: None                                              *
+ *   Member Data: elementCount - keeps track of each element in the a   *
+ *                                array                                 *
+ ***********************************************************************/
+void Employee::readData()
+{
+    //get the number of records so that we couyld dynamically create an array of employees
+//    getNumberOfRecords();
+    
+    int count = getNumberOfRecords();
+    cout << "Count: " << count << endl;
+    
+    
+    //instantiate the array of employees
+    employees = new Employee*[count];
+    
+    //keeps the local count to fill the employee array
+    int elementCount = 0;
+    
+    //open the file
     if (openFile())
     {
         //character array to hold each line of data read from the file
@@ -182,22 +220,67 @@ void EmployeeTracker::readData()
         //read each line until you reach the end of file
         while (inputFile.getline(readline, 100))
         {
-            newEmployee = new Employee;
+            //instantiate a new employee
+            Employee *newEmployee = new Employee;
+            
+            //fill each object property delimited by the ;
             strcpy(newEmployee->employeeName, strtok(readline, d));
-            cout << readline;
-            cout << '\t';
+            newEmployee->employeeAge = atoi(strtok(NULL, d));
+            newEmployee->employeeSalary = atoi(strtok(NULL, d));
 
+            //DEBUG - displaying each element being entered
+//            cout << newEmployee->employeeName << "\t";
+//            cout << newEmployee->employeeAge << "\t";
+//            cout << newEmployee->employeeSalary << "\t";
+//            cout << '\n';
+            
+            //assigning new employee object to the array
+            employees[elementCount] = newEmployee;
+            //increment so that next array can be filled
+            ++elementCount;
         }
         
-//        for (int i = 0; i < lineCount; i++)
-//        {
-//            cout << employees[i].getEmployeeName() << endl;
-//        }
+        sort();
+        //saveFile();
+        closeFile();
     }
     else
     {
         cout << "FAILED TO OPEN THE FILE !!!" << endl;
     }
+    
+
+
+}
+
+/***********************************************************************
+ *   Function: sort                                                     *
+ *   Purpose:  perform bubble sort and save the file                    *
+ *   Parameters:  None                                                  *
+ *   Local Variables: None                                              *
+ *   Member Data: NA                                                    *
+ ***********************************************************************/
+void Employee::sort()
+{
+    Employee *tmp;
+    int i;
+    int j;
+    
+    for ( i = 0; i < lineCount; i++)
+    {
+        for ( j = i + 1; j < lineCount; j++)
+        {
+            //if ( strcmp((*(employees + i)->employeeName), (*(employees + j)->employeeName)) > 0)
+            if (strcmp(employees[i]->employeeName, employees[j]->employeeName) > 0)
+            {
+                tmp = employees[i];
+                employees[i] = employees[j];
+                employees[j] = tmp;
+            }
+        }
+    }
+    
+    saveFile();
 }
 
 
@@ -208,8 +291,10 @@ void EmployeeTracker::readData()
  *   Local Variables: None                                              *
  *   Member Data: lineCount                                             *
  ***********************************************************************/
-void EmployeeTracker::getNumberOfRecords()
+int Employee::getNumberOfRecords()
 {
+    int count = 0;
+    
     if (openFile())
     {
         //character array to hold each line of data read from the file
@@ -218,39 +303,64 @@ void EmployeeTracker::getNumberOfRecords()
         //read each line until you reach the end of file
         while (inputFile.getline(readline, 100))
         {
-            lineCount++;
+            //cout << readline << endl;
+            count++;
         }
+    }
+    else
+    {
+        cout << "Unable to open the file !" << endl;
     }
     
     //close the file once complete.
     closeFile();
     
+    //set the data member updated
+    lineCount = count;
+    
+    return count;
     //DEBUG
     //cout << "Number of Lines: " << lineCount << endl;
 }
 
-
-void EmployeeTracker::displayEmployees()
+/***********************************************************************
+ *   Function: displayEmployees                                         *
+ *   Purpose:  Reads the file and displays the content                  *
+ *   Parameters:  NA                                                    *
+ *   Return: NA                                                         *
+ *   Local Variables:  NA                                               *
+ ***********************************************************************/
+void Employee::displayEmployees()
 {
     if (openFile())
     {
         //character array to hold each line of data read from the file
         char readline[100];
+        int indexNumber = 1;
         
+        cout << setw(10) << "#" << left << setw(20) << "Employee Name" << left << setw(10) << "Age" << left << setw(15) << "Salary" << endl;
+        cout << "===============================================================" << endl;
         //read each line until you reach the end of file
         while (inputFile.getline(readline, 100))
         {
-            cout << readline << endl;
-            lineCount++;
+            cout << left << setw(10) << indexNumber;
+            cout << left << setw(20) << strtok(readline, ";");
+            cout << left << setw(10) << strtok(NULL, ";");
+            cout << left << setw(15) << strtok(NULL, ";");
+            cout << "\n";
+            indexNumber++;
         }
         
         //DEBUG - display the number of records found in the input file
         //cout << "Number of Records: " << lineCount << endl;
+        
+        closeFile();
     }
     else
     {
         cout << "FAILED TO OPEN THE DAMN FILE !!!" << endl;
     }
+    
 }
 
 /***********************************************************************
@@ -260,7 +370,7 @@ void EmployeeTracker::displayEmployees()
  *   Return: bool if the file opens                                     *
  *   Local Variables:  NA                                               *
  ***********************************************************************/
-bool EmployeeTracker::openFile()
+bool Employee::openFile()
 {
     inputFile.open(fileName);
     
@@ -268,13 +378,25 @@ bool EmployeeTracker::openFile()
 }
 
 
-void EmployeeTracker::closeFile()
+/***********************************************************************
+ *   Function: closeFile                                                *
+ *   Purpose:  Closes the file                                          *
+ *   Parameters:  NA                                                    *
+ *   Return: NA                                                         *
+ *   Local Variables:  NA                                               *
+ ***********************************************************************/
+void Employee::closeFile()
 {
     inputFile.close();
 }
 
-
-
+/***********************************************************************
+ *   Function: main                                                     *
+ *   Purpose:  main entry point                                         *
+ *   Parameters:  NA                                                    *
+ *   Return: NA                                                         *
+ *   Local Variables:  NA                                               *
+ ***********************************************************************/
 int main(int argc, const char * argv[])
 {
     /*****************************************************************/
@@ -289,8 +411,10 @@ int main(int argc, const char * argv[])
     /*****************************************************************/
     
     
-    EmployeeTracker newEmployee(argv[1]);
+    Employee newEmployee;
+    strcpy(newEmployee.fileName, argv[1]);
     newEmployee.userMenu();
+    
     
     //set the proper variables...
     
