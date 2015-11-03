@@ -12,10 +12,23 @@
 
 using namespace std;
 
-enum AIRSHIP_TYPE {AIRPLANE = 0, BALLOON = 1};
-enum ENGINE_TYPE {JET = 0, PROPELLER = 1};
-enum GAS_TYPE {HELIUM = 0, HYDROGEN = 1};
+enum AIRSHIP_TYPE {AIRPLANE = 0, BALLOON = 1};  //AirShip Type
+enum ENGINE_TYPE {JET = 0, PROPELLER = 1};      //Engine Type for Airplane Objects
+enum GAS_TYPE {HELIUM = 0, HYDROGEN = 1};       //Gas Type for Balloon Objects
 
+/************************************************************
+ Function: DataMembers
+ Purpose: Place holder to hold the data that's being read from the file
+ Parameters: none
+ Variables:
+    type: int value to determine if its airplane or balloon
+    name: name of the airplane or balloon
+    maxPassemgers: number of passengers
+    maxCargoWeight: maximum cargo weight
+    gasType: either helium or hydrogen
+    maxRange: maximum range
+    maxAltitude: maximum altitude
+ ************************************************************/
 struct DataMembers
 {
     int type;
@@ -28,57 +41,70 @@ struct DataMembers
     double maxAltitude;
 };
 
+
 class AirShip
 {
     public:
-        void readFile(int argCount, const char *fileName);
-        virtual void setData (DataMembers &data) = 0;
-        virtual void showData() = 0;
-        void displayData(AirShip &data);
-        AIRSHIP_TYPE getAirShipType() { return (AIRSHIP_TYPE)airShipType; };
+        void readFile(int argCount, const char *fileName);                      //Method to read in the file
+        virtual void setData (DataMembers &data) = 0;                           //Setting the values
+        virtual void showData() = 0;                                            //Display the data
+        AIRSHIP_TYPE getAirShipType() { return (AIRSHIP_TYPE)airShipType; };    //Returns enum type
 
     private:
-        const char *fileName;
-        int getNumberOfRecords(const char *fileName);
+        const char *fileName;                                                   //File name passed in from the CLI argument
+        int getNumberOfRecords(const char *fileName);                           //Number of records found in the file
 
     
     protected:
-        int airShipType;
-        string name;
-        int maxPassengers;
-        double maxCargoWeight;
+        int airShipType;                                                        //Type of AirShip object being held
+        string name;                                                            //Name of the object
+        int maxPassengers;                                                      //Max Passenger Counts
+        double maxCargoWeight;                                                  //Max Cargo Weight
     
 };
 
+//Airplane Object
 class Airplane : public AirShip
 {
     public:
-        Airplane() : AirShip() {}
-        void setData (DataMembers &data);
-        void showData();
-        const char* getType(ENGINE_TYPE type);
+        Airplane() : AirShip() {}                                               //Default constructor
+        void setData (DataMembers &data);                                       //Implementation of setData method from the baseclass
+        void showData();                                                        //Implementaiton of showData method from the baseclass
+        const char* getType(ENGINE_TYPE type);                                  //Returns the engine type from the enum
     protected:
-        int engineType;
-        double maxRange;
+        int engineType;                                                         //iVar to hold engine type info
+        double maxRange;                                                        //iVar to hold the max range
     
 };
 
+//Balloon Object
 class Balloon : public AirShip
 {
     public:
-        Balloon() : AirShip() {}
-        void setData (DataMembers &data);
-        void showData();
-    const char* getType(GAS_TYPE type);
+        Balloon() : AirShip() {}                                                //Default constructor
+        void setData (DataMembers &data);                                       //Implementation of setData method from the baseclass
+        void showData();                                                        //Implementaiton of showData method from the baseclass
+        const char* getType(GAS_TYPE type);                                     //Returns the gas type from the enum
     protected:
-        int gasType;
-        double maxAltitude;
+        int gasType;                                                            //iVar to hold the gas type
+        double maxAltitude;                                                     //iVar to hold the maximum altitude
     
 
 };
 
 
-
+/************************************************************
+ Function: setData (DataMembers &data)
+ Purpose: Holds the data thats read from the database
+ Parameters: DataMembers-enum
+ Variables:
+     name: name of the airplane or balloon
+     maxPassemgers: number of passengers
+     maxCargoWeight: maximum cargo weight
+     gasType: either helium or hydrogen
+     maxRange: maximum range
+     maxAltitude: maximum altitude
+ ************************************************************/
 void Airplane::setData (DataMembers &data)
 {
     
@@ -90,6 +116,12 @@ void Airplane::setData (DataMembers &data)
     engineType = ENGINE_TYPE(data.engineType);
 }
 
+/************************************************************
+ Function: showData()
+ Purpose: Displays the data that's being held in the object
+ Parameters: none
+ Variables: none
+************************************************************/
 void Airplane::showData()
 {
     cout << left << setw(20) << name;
@@ -97,7 +129,18 @@ void Airplane::showData()
     cout << left << setw(20) << maxRange;
 }
 
-
+/************************************************************
+ Function: setData (DataMembers &data)
+ Purpose: Holds the data thats read from the database
+ Parameters: DataMembers-enum
+ Variables:
+ name: name of the airplane or balloon
+ maxPassemgers: number of passengers
+ maxCargoWeight: maximum cargo weight
+ gasType: either helium or hydrogen
+ maxRange: maximum range
+ maxAltitude: maximum altitude
+ ************************************************************/
 void Balloon::setData (DataMembers &data)
 {
     name = data.name;
@@ -108,6 +151,12 @@ void Balloon::setData (DataMembers &data)
     gasType = GAS_TYPE(data.gasType);
 }
 
+/************************************************************
+ Function: showData()
+ Purpose: Displays the data that's being held in the object
+ Parameters: none
+ Variables: none
+ ************************************************************/
 void Balloon::showData()
 {
     cout << left << setw(20) << name;
@@ -115,6 +164,12 @@ void Balloon::showData()
     cout << left << setw(20) << maxAltitude;
 }
 
+/************************************************************
+ Function: getType(ENGINE_TYPE type)
+ Purpose: Determines what type of engine
+ Parameters: ENGINE_TYPE type
+ Variables: none
+ ************************************************************/
 const char* Airplane::getType(ENGINE_TYPE type)
 {
     switch (type)
@@ -132,6 +187,12 @@ const char* Airplane::getType(ENGINE_TYPE type)
     
 }
 
+/************************************************************
+ Function: getType(GAS_TYPE type)
+ Purpose: Determines what type of engine
+ Parameters: GAS_TYPE type
+ Variables: none
+ ************************************************************/
 const char* Balloon::getType(GAS_TYPE type)
 {
     switch (type)
@@ -150,8 +211,15 @@ const char* Balloon::getType(GAS_TYPE type)
 }
 
 
-
-// File Utility Method
+/************************************************************
+ Function: getNumberOfRecords(const char *fileName)
+ Purpose: Opens the file with the fileName that's passed in
+ Parameters: fileName
+ Variables:
+    inputFile: file object
+    tokenRead: token that's read in from the file
+    numberOfRecords: number of lines found in the file
+ ************************************************************/
 int AirShip::getNumberOfRecords(const char *fileName)
 {
     //create the input stream
@@ -184,6 +252,17 @@ int AirShip::getNumberOfRecords(const char *fileName)
     
 }
 
+/************************************************************
+ Function: readFile(int argCount, const char *fileName)
+ Purpose: Opens the file
+ Parameters: 
+    argCount: argument count from the main mneu
+    fileName: fileName
+ Variables:
+     inputFile: file object
+     tokenRead: token that's read in from the file
+     numberOfRecords: number of lines found in the file
+ ************************************************************/
 void AirShip::readFile(int argCount, const char *fileName)
 {
     if (argCount != 2)
@@ -281,7 +360,7 @@ void AirShip::readFile(int argCount, const char *fileName)
     
     cout << "\n";
     
-    //print the Airplane Data
+    //print the Balloon Data
     cout << "Listing of all Balloons" << endl;
     cout << left << setw(20) << "Name" << left << setw(20) << "Gas Type" << left << setw(10) << "Maximum Altitude" << endl;
     cout << "===============================================================" << endl;
