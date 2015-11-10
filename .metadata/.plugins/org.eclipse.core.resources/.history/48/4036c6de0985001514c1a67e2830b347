@@ -1,0 +1,13 @@
+import math
+
+def main():
+    
+    enteredValue = eval(input("Enter the factorial number you like calculated; "))
+    
+    fact = 1;
+    for factor in range(1, enteredValue, 1):
+        fact = fact * factor;
+    
+    print("Factorial of ", enteredValue, " is ", fact)
+    
+main()
