@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SubmissionScripts/SubmissionScript&apos; to &apos;SubmissionScript.py&apos;" description="Rename resource &apos;SubmissionScript&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="SubmissionScript" name="SubmissionScript.py" stamp="1449722284817" updateReferences="true"/>
+</session>

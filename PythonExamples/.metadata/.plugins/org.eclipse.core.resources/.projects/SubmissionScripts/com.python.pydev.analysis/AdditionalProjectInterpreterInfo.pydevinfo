@@ -1,0 +1,17 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/Volumes/Data/Development/PythonExamples/.metadata/.plugins/org.eclipse.core.resources/.projects/SubmissionScripts/com.python.pydev.analysis/v2_indexcache
+SubmissionScript|1449871878000000000|/Volumes/Data/Development/PythonExamples/SubmissionScripts/SubmissionScript.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=SubmissionScript
+-- END DICTIONARY
+-- START TREE 1
+2
+gen|1|generateScript!10@
+mai|1|main!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE
