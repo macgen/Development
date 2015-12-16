@@ -11,6 +11,7 @@
 
 @interface TeamMemberViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+//Team Member Object
 @property TeamMember *teamMember;
 
 @end

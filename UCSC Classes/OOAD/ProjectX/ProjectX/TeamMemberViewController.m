@@ -29,6 +29,7 @@
 
 @implementation TeamMemberViewController
 
+//Method to load initial data when the view is loaded for the very first time.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,6 +44,7 @@
     }
 }
 
+//Only implemented when memory is running low.
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -62,7 +64,7 @@ Description: Method utilizes UIImagePickerController to take picture
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
-
+//Browse the picture in the Lbrary or using a Picture
 - (IBAction)browsePicture:(UIButton *)sender
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -73,6 +75,7 @@ Description: Method utilizes UIImagePickerController to take picture
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
+//Instantiate the picker view controller
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerEditedImage];
@@ -81,6 +84,7 @@ Description: Method utilizes UIImagePickerController to take picture
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
+//Memthod to implement when Cancel buttoin is pressed. 
 - (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:NULL];

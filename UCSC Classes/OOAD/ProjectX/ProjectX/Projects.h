@@ -10,6 +10,7 @@
 
 @interface Projects : NSObject
 
+//Properties to hold Project Information
 @property NSString *projectName;
 @property NSDate *createdDate;
 @property NSDate *dueDate;

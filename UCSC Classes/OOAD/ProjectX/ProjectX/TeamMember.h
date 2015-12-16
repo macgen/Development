@@ -12,6 +12,7 @@
 
 @interface TeamMember : NSObject
 
+//Properties to hold Team Member Information
 @property NSString *firstName;
 @property NSString *lastName;
 @property NSString *fullName;
