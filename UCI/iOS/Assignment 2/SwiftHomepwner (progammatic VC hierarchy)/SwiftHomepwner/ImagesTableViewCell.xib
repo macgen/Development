@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UITableViewCell"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="TableViewCell" customModule="SwiftHomepwner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rXk-ZF-ZIo">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-6h-iEF">
+                    <rect key="frame" x="8" y="525" width="584" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="ZjX-do-2oz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="IrB-6h-iEF" secondAttribute="bottom" constant="54" id="GuH-cv-dTT"/>
+                <constraint firstAttribute="bottom" secondItem="rXk-ZF-ZIo" secondAttribute="bottom" id="Kht-Ju-PKH"/>
+                <constraint firstItem="rXk-ZF-ZIo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="O2c-lI-kYh"/>
+                <constraint firstItem="IrB-6h-iEF" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="PGF-nS-f53"/>
+                <constraint firstItem="IrB-6h-iEF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="roK-YA-tVH"/>
+                <constraint firstItem="rXk-ZF-ZIo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wN3-cL-qyV"/>
+                <constraint firstItem="IrB-6h-iEF" firstAttribute="centerX" secondItem="rXk-ZF-ZIo" secondAttribute="centerX" id="xvn-9F-Iej"/>
+            </constraints>
+            <connections>
+                <outlet property="captionLabel" destination="IrB-6h-iEF" id="WO1-tp-z4j"/>
+                <outlet property="itemImageView" destination="rXk-ZF-ZIo" id="znY-GH-i3K"/>
+            </connections>
+        </view>
+    </objects>
+</document>
