@@ -49,6 +49,13 @@
                         <outlet property="delegate" destination="-1" id="O4y-yz-LCn"/>
                     </connections>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6L-Bt-k9Q">
+                    <rect key="frame" x="202" y="172" width="80" height="30"/>
+                    <state key="normal" title="View Graph"/>
+                    <connections>
+                        <action selector="viewGraph:" destination="-1" eventType="touchUpInside" id="us6-ZR-69E"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

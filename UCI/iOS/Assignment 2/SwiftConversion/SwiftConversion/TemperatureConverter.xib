@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10102" systemVersion="15E39" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TemperatureConverterViewController" customModule="SwiftConversion" customModuleProvider="target">
+            <connections>
+                <outlet property="celsiusTextField" destination="MOE-jH-Ek0" id="Iib-lH-0F0"/>
+                <outlet property="fahrenheitTextField" destination="zFp-R7-VJH" id="8hY-rU-WaB"/>
+                <outlet property="view" destination="iN0-l3-epB" id="pwg-AR-pnX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fahrenheit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B97-Z9-Tu8">
+                    <rect key="frame" x="15" y="91" width="86" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zFp-R7-VJH">
+                    <rect key="frame" x="118" y="87" width="467" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="yOf-hf-yXI"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celcius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5V-xD-RXG">
+                    <rect key="frame" x="40" y="135" width="61" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOE-jH-Ek0">
+                    <rect key="frame" x="118" y="131" width="467" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Xiz-1c-vru"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zFp-R7-VJH" firstAttribute="leading" secondItem="B97-Z9-Tu8" secondAttribute="trailing" constant="17" id="0Rm-bJ-EfN"/>
+                <constraint firstItem="MOE-jH-Ek0" firstAttribute="top" secondItem="zFp-R7-VJH" secondAttribute="bottom" constant="14" id="9lm-4f-bhe"/>
+                <constraint firstItem="e5V-xD-RXG" firstAttribute="centerY" secondItem="MOE-jH-Ek0" secondAttribute="centerY" id="JD3-1j-PEG"/>
+                <constraint firstItem="B97-Z9-Tu8" firstAttribute="trailing" secondItem="e5V-xD-RXG" secondAttribute="trailing" id="M7o-nf-43b"/>
+                <constraint firstItem="B97-Z9-Tu8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="PZU-Tu-aSj"/>
+                <constraint firstAttribute="trailing" secondItem="zFp-R7-VJH" secondAttribute="trailing" constant="15" id="R8I-4f-fms"/>
+                <constraint firstItem="zFp-R7-VJH" firstAttribute="trailing" secondItem="MOE-jH-Ek0" secondAttribute="trailing" id="Xre-4Z-HVH"/>
+                <constraint firstItem="B97-Z9-Tu8" firstAttribute="centerY" secondItem="zFp-R7-VJH" secondAttribute="centerY" id="gPs-4j-QKp"/>
+                <constraint firstItem="zFp-R7-VJH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="87" id="oyk-PA-4c0"/>
+                <constraint firstItem="zFp-R7-VJH" firstAttribute="leading" secondItem="MOE-jH-Ek0" secondAttribute="leading" id="yPS-GK-aD9"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+        </view>
+    </objects>
+</document>

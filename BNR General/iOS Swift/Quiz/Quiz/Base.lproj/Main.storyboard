@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10060.2" systemVersion="15E32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl9-ac-bmq">
+                                <rect key="frame" x="286" y="28" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8f-K0-mbG">
+                                <rect key="frame" x="267" y="57" width="62" height="30"/>
+                                <state key="normal" title="Question"/>
+                                <connections>
+                                    <action selector="showNextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uF7-oh-cgK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-5z-Q7r">
+                                <rect key="frame" x="273" y="318" width="51" height="30"/>
+                                <state key="normal" title="Answer"/>
+                                <connections>
+                                    <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQJ-pW-KS5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfV-dN-DAh">
+                                <rect key="frame" x="259" y="289" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nfV-dN-DAh" firstAttribute="centerX" secondItem="C8f-K0-mbG" secondAttribute="centerX" id="DaL-BC-3GY"/>
+                            <constraint firstItem="xl9-ac-bmq" firstAttribute="centerX" secondItem="C8f-K0-mbG" secondAttribute="centerX" id="LMC-CS-B3v"/>
+                            <constraint firstItem="dMN-5z-Q7r" firstAttribute="top" secondItem="nfV-dN-DAh" secondAttribute="bottom" constant="8" id="OwD-vQ-BUU"/>
+                            <constraint firstItem="C8f-K0-mbG" firstAttribute="top" secondItem="xl9-ac-bmq" secondAttribute="bottom" constant="8" id="Twr-bb-BeL"/>
+                            <constraint firstItem="dMN-5z-Q7r" firstAttribute="centerX" secondItem="C8f-K0-mbG" secondAttribute="centerX" id="bc9-NL-rLX"/>
+                            <constraint firstItem="xl9-ac-bmq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="gbn-ji-Fis"/>
+                            <constraint firstItem="nfV-dN-DAh" firstAttribute="top" secondItem="C8f-K0-mbG" secondAttribute="bottom" constant="202" id="iaY-sk-9bk"/>
+                            <constraint firstItem="xl9-ac-bmq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="obh-I4-pNJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="nfV-dN-DAh" id="TZ5-Kk-wLe"/>
+                        <outlet property="questionLabel" destination="xl9-ac-bmq" id="Xza-N7-ak2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

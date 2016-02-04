@@ -7,6 +7,7 @@
 //
 
 #import "TemperatureConverterViewController.h"
+#import "FCCurveViewController.h"
 
 @interface TemperatureConverterViewController ()
 
@@ -68,5 +69,16 @@
     return true;
 }
 
+- (IBAction)viewGraph:(id)sender
+{
+    FCCurveViewController *fcVC = [[FCCurveViewController alloc] initWithNibName:@"FCCurveViewController" bundle: [NSBundle mainBundle]];
+    //UINavigationController *fController = [[UINavigationController alloc] initWithRootViewController: fcVC];
+    
+    [self.navigationController pushViewController: fcVC animated: YES];
+
+    
+    
+
+}
 
 @end

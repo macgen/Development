@@ -18,16 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    BNRQuizViewController *quizVC = [[BNRQuizViewController alloc] init];
-    self.window.rootViewController = quizVC;
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    
-    [self.window makeKeyAndVisible];
-    
-    return YES;
+`
 }
 
 
