@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10102" systemVersion="15E39" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DistanceConverterViewController" customModule="SwiftConversion" customModuleProvider="target">
+            <connections>
+                <outlet property="kilosTextField" destination="GxD-h6-zdf" id="iDu-Ea-rEm"/>
+                <outlet property="milesTextField" destination="71E-Mu-p78" id="2nm-2y-e6V"/>
+                <outlet property="view" destination="iN0-l3-epB" id="V4P-h3-7Ud"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfL-HM-L65">
+                    <rect key="frame" x="31" y="82" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GxD-h6-zdf">
+                    <rect key="frame" x="81" y="79" width="501" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="VHb-i1-29Q"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6i9-NA-T3H">
+                    <rect key="frame" x="28" y="130" width="45" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="71E-Mu-p78">
+                    <rect key="frame" x="81" y="127" width="501" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="UwL-FN-AC2"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NfL-HM-L65" firstAttribute="baseline" secondItem="GxD-h6-zdf" secondAttribute="baseline" id="69o-Vo-F4T"/>
+                <constraint firstItem="GxD-h6-zdf" firstAttribute="trailing" secondItem="71E-Mu-p78" secondAttribute="trailing" id="9QX-ON-3aA"/>
+                <constraint firstItem="GxD-h6-zdf" firstAttribute="leading" secondItem="NfL-HM-L65" secondAttribute="trailing" constant="8" symbolic="YES" id="L3i-OX-aEY"/>
+                <constraint firstItem="71E-Mu-p78" firstAttribute="leading" secondItem="6i9-NA-T3H" secondAttribute="trailing" constant="8" symbolic="YES" id="MIb-7p-E2m"/>
+                <constraint firstItem="6i9-NA-T3H" firstAttribute="baseline" secondItem="71E-Mu-p78" secondAttribute="baseline" id="Mpm-hF-5E3"/>
+                <constraint firstAttribute="trailing" secondItem="GxD-h6-zdf" secondAttribute="trailing" constant="18" id="TFy-Hn-ygD"/>
+                <constraint firstItem="71E-Mu-p78" firstAttribute="top" secondItem="GxD-h6-zdf" secondAttribute="bottom" constant="18" id="mIk-E7-ygy"/>
+                <constraint firstItem="6i9-NA-T3H" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="28" id="qJf-cT-qle"/>
+                <constraint firstItem="GxD-h6-zdf" firstAttribute="leading" secondItem="71E-Mu-p78" secondAttribute="leading" id="qT2-03-IsH"/>
+                <constraint firstItem="GxD-h6-zdf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="79" id="xVS-ID-bm4"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+        </view>
+    </objects>
+</document>

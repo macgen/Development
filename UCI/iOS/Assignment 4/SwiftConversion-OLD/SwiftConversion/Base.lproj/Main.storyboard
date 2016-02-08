@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10102" systemVersion="15E39" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Qz-rs-g31">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Temperature-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TemperatureConverterViewController" customModule="SwiftConversion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4an-Pk-fmR">
+                                <rect key="frame" x="264" y="106" width="316" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celcius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Knm-Ey-b9a">
+                                <rect key="frame" x="200" y="168" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8z-R8-gex">
+                                <rect key="frame" x="264" y="164" width="316" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuQ-Iy-9fP">
+                                <rect key="frame" x="16" y="83" width="136" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="87i-g0-8qx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTn-Ga-saj">
+                                <rect key="frame" x="180" y="110" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H8z-R8-gex" firstAttribute="top" secondItem="4an-Pk-fmR" secondAttribute="bottom" constant="28" id="6KV-pb-wdf"/>
+                            <constraint firstItem="SuQ-Iy-9fP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="97u-gm-dIY"/>
+                            <constraint firstItem="Knm-Ey-b9a" firstAttribute="centerY" secondItem="H8z-R8-gex" secondAttribute="centerY" id="Hr9-8J-zju"/>
+                            <constraint firstItem="4an-Pk-fmR" firstAttribute="leading" secondItem="DTn-Ga-saj" secondAttribute="trailing" constant="3" id="KsZ-UQ-QdJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SuQ-Iy-9fP" secondAttribute="bottom" constant="331" id="MPu-ed-yJc"/>
+                            <constraint firstItem="4an-Pk-fmR" firstAttribute="trailing" secondItem="H8z-R8-gex" secondAttribute="trailing" id="OQR-Oe-XiP"/>
+                            <constraint firstItem="DTn-Ga-saj" firstAttribute="centerY" secondItem="4an-Pk-fmR" secondAttribute="centerY" id="VIy-pc-jDu"/>
+                            <constraint firstItem="4an-Pk-fmR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VpO-NC-ri6"/>
+                            <constraint firstItem="DTn-Ga-saj" firstAttribute="trailing" secondItem="Knm-Ey-b9a" secondAttribute="trailing" id="WzR-Lg-TWh"/>
+                            <constraint firstItem="4an-Pk-fmR" firstAttribute="leading" secondItem="H8z-R8-gex" secondAttribute="leading" id="cJS-Tc-CXO"/>
+                            <constraint firstItem="DTn-Ga-saj" firstAttribute="leading" secondItem="SuQ-Iy-9fP" secondAttribute="trailing" constant="28" id="hhB-2D-kAj"/>
+                            <constraint firstItem="SuQ-Iy-9fP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="iSI-ug-z0h"/>
+                            <constraint firstItem="4an-Pk-fmR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="xD8-SH-h3n"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="camera" id="R72-5f-xfQ">
+                            <connections>
+                                <action selector="cameraActionPressed:" destination="BYZ-38-t0r" id="1xH-0w-2ge"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Temperature" id="wNM-eK-cpf"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraButtonPressed" destination="R72-5f-xfQ" id="qz0-gl-iE3"/>
+                        <outlet property="celsiusTextField" destination="H8z-R8-gex" id="srk-mW-TQ1"/>
+                        <outlet property="fahrenheitTextField" destination="4an-Pk-fmR" id="J9G-44-WO4"/>
+                        <outlet property="imageView" destination="SuQ-Iy-9fP" id="CQj-zx-Liz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="1089"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RwI-ie-6yG">
+            <objects>
+                <viewController id="n3y-XC-Cpe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yLC-Pt-XoI"/>
+                        <viewControllerLayoutGuide type="bottom" id="XaH-c8-qF9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mfy-Zo-Lso">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1b7-hP-L7m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uaf-hY-aUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="1800"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eKY-oF-Xlh">
+            <objects>
+                <viewController id="mHw-Tw-RTw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YXf-BP-FDa"/>
+                        <viewControllerLayoutGuide type="bottom" id="3nT-Cb-yMc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Ci-WD-JOM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rZh-e2-Msu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SzB-FZ-hK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="2512"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="qwu-tH-ldD">
+            <objects>
+                <tableViewController id="X4r-Dn-JgU" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eI1-KF-K6W">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UbG-UR-GWl">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UbG-UR-GWl" id="iQs-Zu-uP2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="X4r-Dn-JgU" id="7mo-M0-6Yl"/>
+                            <outlet property="delegate" destination="X4r-Dn-JgU" id="u9r-BI-jtJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Vzm-qY-C2p"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJJ-Nk-EXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="3244"/>
+        </scene>
+        <!--Temperature-->
+        <scene sceneID="p2N-TR-dOv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Umq-Da-CPN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Temperature" image="thermometer_icon.png" id="xiz-lW-xtQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EOn-mT-apV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fvH-9u-xSX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dfv-jb-9AP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="1089"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0c9-9l-bmC">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5Qz-rs-g31" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="4YE-8t-447">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Umq-Da-CPN" kind="relationship" relationship="viewControllers" id="E3R-Bg-3Mt"/>
+                        <segue destination="Zcf-l3-S0H" kind="relationship" relationship="viewControllers" id="wn2-cT-ufc"/>
+                        <segue destination="R3b-hv-Kll" kind="relationship" relationship="viewControllers" id="WhN-kf-a15"/>
+                        <segue destination="VBW-gk-zxy" kind="relationship" relationship="viewControllers" id="a7o-mk-y3r"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59Z-zp-imE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="1089"/>
+        </scene>
+        <!--Distance-->
+        <scene sceneID="zPC-fF-W2i">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zcf-l3-S0H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Distance" image="ruler_icon.png" id="Xd4-k2-vx4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ab1-pn-Gdh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n3y-XC-Cpe" kind="relationship" relationship="rootViewController" id="rM2-tf-b8T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEe-sl-JlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="1800"/>
+        </scene>
+        <!--Volumetric-->
+        <scene sceneID="mT4-qK-U48">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R3b-hv-Kll" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Volumetric" image="test_tube_icon.png" id="AKg-Bs-ENw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7ue-al-4bp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mHw-Tw-RTw" kind="relationship" relationship="rootViewController" id="9Ww-rm-slq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwv-Ox-5xM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="2512"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="81z-47-eXi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VBW-gk-zxy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favoritesButton_60x60.png" id="Sy0-qC-cnm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I50-Rg-nQE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X4r-Dn-JgU" kind="relationship" relationship="rootViewController" id="7Dx-dw-XO0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gct-xv-i6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="3244"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="favoritesButton_60x60.png" width="30" height="30"/>
+        <image name="ruler_icon.png" width="30" height="30"/>
+        <image name="test_tube_icon.png" width="30" height="30"/>
+        <image name="thermometer_icon.png" width="30" height="30"/>
+    </resources>
+</document>

@@ -22,8 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         let firstNavController = UINavigationController(rootViewController: temperatureConverterViewController)
         firstNavController.tabBarItem.title = "Temperature"
         
+        let distanceConverterViewController = DistanceConverterViewController(nibName: "DistanceConverter", bundle: NSBundle.mainBundle())
+        let distanceNavController = UINavigationController(rootViewController: distanceConverterViewController)
+        distanceNavController.tabBarItem.title = "Distance"
+        
+        let volumetricConverterViewController = VolumetricConverterViewController(nibName: "VolumetricConverter", bundle: NSBundle.mainBundle())
+        let volumetricNavController = UINavigationController(rootViewController:  volumetricConverterViewController)
+        volumetricNavController.tabBarItem.title = "Volumetric"
+        
+        let curveDiagramViewController = CFCurveDiagram(nibName: "CFCurveDiagram", bundle: NSBundle.mainBundle())
+        curveDiagramViewController.tabBarItem.title = "CF Diagram"
+        
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [firstNavController]
+        tabBarController.viewControllers = [firstNavController, curveDiagramViewController, distanceNavController, volumetricNavController]
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = tabBarController

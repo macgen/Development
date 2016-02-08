@@ -14,6 +14,13 @@
 		C67E06631C62D2B300D03C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67E06611C62D2B300D03C0D /* LaunchScreen.storyboard */; };
 		C67E066B1C62D2EF00D03C0D /* TemperatureConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67E066A1C62D2EF00D03C0D /* TemperatureConverterViewController.swift */; };
 		C67E066D1C62D9D900D03C0D /* TemperatureConverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67E066C1C62D9D900D03C0D /* TemperatureConverter.xib */; };
+		C67E066F1C62E61700D03C0D /* DistanceConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67E066E1C62E61700D03C0D /* DistanceConverterViewController.swift */; };
+		C67E06711C62EB2D00D03C0D /* DistanceConverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67E06701C62EB2D00D03C0D /* DistanceConverter.xib */; };
+		C67E06731C62EF3400D03C0D /* VolumetricConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67E06721C62EF3400D03C0D /* VolumetricConverterViewController.swift */; };
+		C67E06751C62F23A00D03C0D /* VolumetricConverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67E06741C62F23A00D03C0D /* VolumetricConverter.xib */; };
+		C67E06771C630CCA00D03C0D /* CFCurveDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67E06761C630CCA00D03C0D /* CFCurveDiagram.swift */; };
+		C67E06791C63100900D03C0D /* CFCurveDiagram.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67E06781C63100900D03C0D /* CFCurveDiagram.xib */; };
+		C67E067B1C63103800D03C0D /* F-C_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = C67E067A1C63103800D03C0D /* F-C_graph.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		C67E06641C62D2B300D03C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C67E066A1C62D2EF00D03C0D /* TemperatureConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConverterViewController.swift; sourceTree = "<group>"; };
 		C67E066C1C62D9D900D03C0D /* TemperatureConverter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemperatureConverter.xib; sourceTree = "<group>"; };
+		C67E066E1C62E61700D03C0D /* DistanceConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceConverterViewController.swift; sourceTree = "<group>"; };
+		C67E06701C62EB2D00D03C0D /* DistanceConverter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistanceConverter.xib; sourceTree = "<group>"; };
+		C67E06721C62EF3400D03C0D /* VolumetricConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumetricConverterViewController.swift; sourceTree = "<group>"; };
+		C67E06741C62F23A00D03C0D /* VolumetricConverter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VolumetricConverter.xib; sourceTree = "<group>"; };
+		C67E06761C630CCA00D03C0D /* CFCurveDiagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFCurveDiagram.swift; sourceTree = "<group>"; };
+		C67E06781C63100900D03C0D /* CFCurveDiagram.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFCurveDiagram.xib; sourceTree = "<group>"; };
+		C67E067A1C63103800D03C0D /* F-C_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "F-C_graph.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +73,17 @@
 			isa = PBXGroup;
 			children = (
 				C67E06581C62D2B300D03C0D /* AppDelegate.swift */,
-				C67E066C1C62D9D900D03C0D /* TemperatureConverter.xib */,
 				C67E066A1C62D2EF00D03C0D /* TemperatureConverterViewController.swift */,
+				C67E066E1C62E61700D03C0D /* DistanceConverterViewController.swift */,
+				C67E06721C62EF3400D03C0D /* VolumetricConverterViewController.swift */,
+				C67E06761C630CCA00D03C0D /* CFCurveDiagram.swift */,
+				C67E06741C62F23A00D03C0D /* VolumetricConverter.xib */,
+				C67E06701C62EB2D00D03C0D /* DistanceConverter.xib */,
+				C67E066C1C62D9D900D03C0D /* TemperatureConverter.xib */,
+				C67E06781C63100900D03C0D /* CFCurveDiagram.xib */,
 				C67E065A1C62D2B300D03C0D /* ViewController.swift */,
 				C67E065C1C62D2B300D03C0D /* Main.storyboard */,
+				C67E067A1C63103800D03C0D /* F-C_graph.png */,
 				C67E065F1C62D2B300D03C0D /* Assets.xcassets */,
 				C67E06611C62D2B300D03C0D /* LaunchScreen.storyboard */,
 				C67E06641C62D2B300D03C0D /* Info.plist */,
@@ -128,10 +149,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C67E06751C62F23A00D03C0D /* VolumetricConverter.xib in Resources */,
 				C67E06631C62D2B300D03C0D /* LaunchScreen.storyboard in Resources */,
 				C67E06601C62D2B300D03C0D /* Assets.xcassets in Resources */,
 				C67E065E1C62D2B300D03C0D /* Main.storyboard in Resources */,
+				C67E06711C62EB2D00D03C0D /* DistanceConverter.xib in Resources */,
 				C67E066D1C62D9D900D03C0D /* TemperatureConverter.xib in Resources */,
+				C67E06791C63100900D03C0D /* CFCurveDiagram.xib in Resources */,
+				C67E067B1C63103800D03C0D /* F-C_graph.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +169,9 @@
 			files = (
 				C67E066B1C62D2EF00D03C0D /* TemperatureConverterViewController.swift in Sources */,
 				C67E065B1C62D2B300D03C0D /* ViewController.swift in Sources */,
+				C67E06771C630CCA00D03C0D /* CFCurveDiagram.swift in Sources */,
+				C67E06731C62EF3400D03C0D /* VolumetricConverterViewController.swift in Sources */,
+				C67E066F1C62E61700D03C0D /* DistanceConverterViewController.swift in Sources */,
 				C67E06591C62D2B300D03C0D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
