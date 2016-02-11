@@ -1,0 +1,44 @@
+1. Information Expert
+Example: 
+- Teacher Class has the ability to assign homework, hand out tests and give grades. 
+- Teacher's Aid Class have the ability to handout tests and respond to questions. 
+
+2. Creator
+Example:
+a. createe is contained inside the creator: 
+b. createe is aggregated by creator: 
+c. creator has the data to create createe: Teacher Class can create a ClassRoom Object
+d. creator makes record of createe: Teacher Class can create collection of student Object
+e. creator uses the createe closely: Teacher Class can extend Student Object to Student Aid Object
+
+3. Controller
+Example:
+- Controller handles number of students objects to be displayed to the printer class.
+
+4. Low Coupling
+Example:
+- Teacher Class can only handle actions and properties that pertain to the classroom. 
+- Administration Class handles the management of student assignment etc. 
+
+5. High Coupling
+Example:
+- Administration Class handles all actions within the class and the actions that teacher class would also perform. 
+- This is considered bad design. 
+
+6. Polymorphism
+Example:
+- Teacher Class and Teacher's Aid Class and handle similar actions depending on the object. 
+
+7. Pure Fabrication
+Example:
+- Class that attempts to handle all grade and homework by combining tasks between Teacher Class and Teacher's Aid Class. 
+
+8. Indirection:
+Example:
+- Teacher Class creates an Communication Class that handles all communications between each object. 
+
+9. Protected Variations:
+Example:
+- Teacher Class hiding all implementation on how gradeHomework method is performed or calculated. 
+
+
