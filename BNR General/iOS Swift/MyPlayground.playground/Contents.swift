@@ -6,6 +6,8 @@ var helloWorld = "Hello World!"
 
 print (helloWorld)
 
+print (42)
+
 var someInt = Int()
 
 var someIntValueToString = String(50)
